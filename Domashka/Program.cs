@@ -39,7 +39,7 @@ namespace Domashka
             try
             {
                 double number = double.Parse(zapatay, System.Globalization.CultureInfo.InvariantCulture);
-                Console.WriteLine("Число" + number);
+                Console.WriteLine("Число = " + number);
             }
             catch
             {
