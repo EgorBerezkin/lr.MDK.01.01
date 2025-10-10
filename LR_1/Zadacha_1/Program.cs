@@ -21,21 +21,7 @@ namespace Zadacha_1
 
 
 
-            /*
 
-                Console.WriteLine($"Введите {n} целых чисел:");
-                for (int i = 0; i < n; i++)
-                {
-                    array[i] = int.Parse(Console.ReadLine());
-                    if (array[i] % 2 == 0)
-                        evenCount++;
-                    else
-                        oddCount++;
-                }
-
-                Console.WriteLine($"Количество четных элементов: {evenCount}");
-                Console.WriteLine($"Количество нечетных элементов: {oddCount}");
-            */
             
         }
     }
