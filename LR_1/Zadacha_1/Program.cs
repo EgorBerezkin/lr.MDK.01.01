@@ -10,6 +10,33 @@ namespace Zadacha_1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите количество чисел в массиве: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] array = new int[n];
+            int EvenCount = 0;
+            int OddCount = 0;
+
+
+
+
+
+
+            /*
+
+                Console.WriteLine($"Введите {n} целых чисел:");
+                for (int i = 0; i < n; i++)
+                {
+                    array[i] = int.Parse(Console.ReadLine());
+                    if (array[i] % 2 == 0)
+                        evenCount++;
+                    else
+                        oddCount++;
+                }
+
+                Console.WriteLine($"Количество четных элементов: {evenCount}");
+                Console.WriteLine($"Количество нечетных элементов: {oddCount}");
+            */
+            
         }
     }
 }
