@@ -10,6 +10,13 @@ namespace Zadacha2
     {
         static void Main(string[] args)
         {
+            int[] numbers = new int[3000];
+            Random random = new Random();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = random.Next(10, 10000);
+            }
+
         }
     }
 }
