@@ -10,7 +10,7 @@ namespace Zadacha_1
     {
         static void Main(string[] args)
         {
-            string[] categories = new string[] { "Крупы", "Овощи", "Фруты" };
+
         }
     }
 }
