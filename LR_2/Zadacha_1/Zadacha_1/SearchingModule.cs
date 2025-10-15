@@ -8,7 +8,7 @@ namespace Zadacha_1
 {
     public class SearchingModule
     {
-        public int FindIndexCategory(string userQuery, string[] categories)
+        public int FindIndexCategory(int indexCategory, string userQuery, string[] categories)
         {
             for(int index = 0; index < categories.Length; ++ index)
             {
@@ -29,5 +29,9 @@ namespace Zadacha_1
             return (productsByCategory, priceByCategory);
         }
 
+        internal int FindIndexCategory(string userQuery, string[] category)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
