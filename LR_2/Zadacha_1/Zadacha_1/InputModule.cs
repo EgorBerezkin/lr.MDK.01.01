@@ -10,6 +10,12 @@ namespace Zadacha_1
         {
             List<string>[] productsByCategory = new List<string>[3];
             List<double>[] price = new List<double>[3];
+            /// Инициализация списков
+            for (int i = 0; i < 3; i++)
+            {
+                productsByCategory[i] = new List<string>();
+                price[i] = new List<double>();
+            }
             /// Заполнение товаров по категории крупа (нулевой индекс)
             productsByCategory[0].Add("Гречневая крупа");
             price[0].Add(120.50);
@@ -61,7 +67,7 @@ namespace Zadacha_1
         public string InputUserQuery()
         {
             Console.Write("Здравствуйте, введите категорию которая вас интересует (крупа/овощи/фрукты): ");
-            return Console.ReadLine();
+            return Console.ReadLine().ToLower();
         }
     }
 }
