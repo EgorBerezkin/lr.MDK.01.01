@@ -19,8 +19,18 @@ namespace Dict
             Words.Add(waistwear, new List<string>() { "Джинсы", "Штаны", "Юбка" });
             string shoulder_wear = "Плечевая одежда";
             Words.Add(shoulder_wear, new List<string>() { "Свитер", "Топик", "Футболка" });
+            /// Вывод списка ключей словаря
+            Console.WriteLine("Ключи в словаре: ")
+            Console.Write(string.Join(", ", Clothes.Keys);
+            /// Вывод данных из ключа hats
+            List<string> Hats = Clothes.[hats];
+            Console.WriteLine("Головыне уборы в словаре: ");
+            Console.Write(string.Join(", ", Hats);
 
-            Console.Write(string.Join(",", Clothes.Keys);
+
+
+
+
         }
     }
 }
