@@ -10,7 +10,9 @@ namespace Dict
     {
         static void Main(string[] args)
         {
+            /// Создал пустой словарь
             Dictionary<string, List<string>> Clothes = new Dictionary<string, List<string>> ();
+            /// Создал в словаре ключи и заполнил их
             string hats = "Головные уборы";
             Words.Add(hats, new List<string>() {"Шляпа", "Бейсболка", "Шапка" });
             string waistwear = "Поясная одежда";
@@ -18,6 +20,7 @@ namespace Dict
             string shoulder_wear = "Плечевая одежда";
             Words.Add(shoulder_wear, new List<string>() { "Свитер", "Топик", "Футболка" });
 
+            Console.Write(string.Join(",", Clothes.Keys);
         }
     }
 }
