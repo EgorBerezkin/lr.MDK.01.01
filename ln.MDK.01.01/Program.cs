@@ -9,22 +9,23 @@ namespace ln.MDK._01._01
 {
     internal class Program
     {
-        static public Clothes MakeClothingByText(string[] Clothes,
-                                               string[] text)
+        /*
+        static public Clothes MakeClothesByText(string text)
         {
-            if(text == "головные уборы")
+            if (text == "Головные уборы")
             {
-                return Clothes.Hats;
+                return hats;
             }
-            if (text == "поясная одежда")
+            if (text == "Поясная одежда")
             {
-                return Clothes.Waistwear;
+                return waistwear;
             }
-            if (text == "плечевая одежда")
+            if (text == "Плечевая одежда")
             {
-                return Clothes.Should_wear;
+                return shoulder_wear;
             }
         }
+        */
         static void Main(string[] args)
         {
             /// Создал пустой словарь
@@ -52,11 +53,50 @@ namespace ln.MDK._01._01
             Console.Write("Плечевая одежда в словаре: ");
             Console.WriteLine(string.Join(", ", Should_wear));
 
-            Console.WriteLine("Какой вид одежды вам нужен?");
-            string text = Console.ReadLine();
 
-            Clothes clothes = MakeClothingByText(text);
-            if()
+            Console.Write("Какой вид одежды вам нужен?");
+            string text = Console.ReadLine();
+            foreach(string clothes in Clothes.Keys)
+            {
+                if (text == hats)
+                {
+                    Console.WriteLine(string.Join(", ", Hats));
+                }
+                else
+                {
+                    if (text == waistwear)
+                    {
+                        Console.WriteLine(string.Join(", ", Waistwear));
+                    }
+                    else
+                    {
+                        if (text == shoulder_wear)
+                        {
+                            Console.WriteLine(string.Join(", ", Should_wear));
+                        }
+                    }
+                }
+            }
+            /*
+            if (text == hats)
+            {
+                Console.WriteLine(string.Join(", ", Hats));
+            }
+            else
+            {
+                if (text == waistwear)
+                {
+                    Console.WriteLine(string.Join(", ", Waistwear));
+                }
+                else
+                {
+                    if (text == shoulder_wear)
+                    {
+                        Console.WriteLine(string.Join(", ", Should_wear));
+                    }
+                }
+            }
+            */
         }
     }
 }
