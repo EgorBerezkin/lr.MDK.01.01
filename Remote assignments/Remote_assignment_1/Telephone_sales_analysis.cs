@@ -46,6 +46,7 @@ namespace Remote_assignment_1
         // в) Метод для определения двух телефонов, приносящих наибольшую прибыль
         public List<string> GetTopTwoProfitablePhones()
         {
+
             // Группируем продажи по модели телефона
             var PhoneGroups = salesData.GroupBy(sale => sale.PhoneModel);
 
