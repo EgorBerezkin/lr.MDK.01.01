@@ -82,8 +82,6 @@ namespace Remote_assignment_1
                 Price = 99000,
                 Cost = 75000
             },
-            
-            // Данные за 13 января
             new Sale_of_phones {
                 Date = new DateTime(2025, 11, 15),
                 PhoneModel = "Samsung Galaxy S27",
@@ -98,7 +96,7 @@ namespace Remote_assignment_1
                 Price = 99000,
                 Cost = 75900
             }
-        };
+            };
         }
     }
 }
