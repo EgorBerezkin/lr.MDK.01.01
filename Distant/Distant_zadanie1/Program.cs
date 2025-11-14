@@ -12,12 +12,11 @@ namespace Remote_assignment_1
         {
             Console.WriteLine("------АНАЛИЗ ПРОДАЖ МОБИЛЬНЫХ ТЕЛЕФОНОВ------");
             var salesData = CreateSampleData();
-            var analyzer = new Telephone_sales_analysis(salesData);
             DateTime startDate = new DateTime(2025, 11, 12);
             DateTime endDate = new DateTime(2025, 11, 15);
-            double totalRevenue = analyzer.ReceivingTotalIncome(startDate, endDate);
             // а) Общая сумма проданного за период
-            Console.WriteLine($"а) Общая сумма проданных телефонов за период {startDate:dd.MM.yyyy} - {endDate:dd.MM.yyyy}: {totalRevenue} рублей");
+            double totalRevenue = GetTotalRevenue(salesData, startDate, endDate);
+            Console.WriteLine($"а) Общая выручка за период: {totalRevenue} рублей");
             // б) Самый продаваемый телефон и телефон с наименьшими продажами
             analyzer.TheBestAndWorstPhone(out string BestPhone, out string WorstPhone);
             Console.WriteLine($"б) Результаты анализа продаж:");
@@ -100,3 +99,4 @@ namespace Remote_assignment_1
         }
     }
 }
+

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Remote_assignment_1
 {
     public class Telephone_sales_analysis
     {
-        // Поле для списка объектов класса Sale_of_phones, salesData хранение всех данных о продажах
-        private List<Sale_of_phones> salesData;
+        // Список объектов класса Sale_of_phones, salesData хранение всех данных о продажах
+        public List<Sale_of_phones> salesData;
         // Конструктор класса, принимает список продаж
         public Telephone_sales_analysis(List<Sale_of_phones> data)
         {
@@ -54,7 +52,7 @@ namespace Remote_assignment_1
             var ProfitablePhones = PhoneGroups.Select(group => new
             {
                 PhoneModel = group.Key,                    // Название модели
-                TotalProfit = group.Sum(s => s.Profit)    // Суммарная прибыль
+                TotalProfit = group.Sum(s => s.Revenue)    // Суммарная прибыль
             })
                 .OrderByDescending(x => x.TotalProfit)   // Сортировка по убыванию прибыли
                 .Take(2)                                 // Выдаем две первые записи
@@ -67,7 +65,7 @@ namespace Remote_assignment_1
         {
             // Сортируем данные по дате для представления как временного ряда
             var timeSeries = salesData.OrderBy(sale => sale.Date);
-            Console.WriteLine("Дата\t\tМодель\t\t\tКоличество\tВыручка");
+            Console.WriteLine("Дата            Модель                  Количество      Выручка");
             Console.WriteLine("---------------------------------------------------------------------");
             // Выводим каждую запись в формате временного ряда
             foreach (var sale in timeSeries)
