@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace Data_structure
 {
-    public class ShoppingProject
+    public struct ShoppingProject
     {
-        public string Name { get; set; }    // get метод для получения значения свойства
-                                            // set метод для установки значения свойства
-        public int ItemCount { get; set; }
-        public int ShoppingTime { get; set; }
-        public decimal Budget { get; set; }
-        public ShoppingProject(string name, int itemCount, int shoppingTime, decimal budget)
+        public string Name;
+        public int ItemCount;
+        public int ShoppingTime;
+        public double Budget;
+        public ShoppingProject(string name, int itemCount, int shoppingTime, double budget)
         {
             Name = name;
             ItemCount = itemCount;
             ShoppingTime = shoppingTime;
             Budget = budget;
         }
-    
         public override string ToString() // Объявление метода
         {
             // Возвращает строку с форматированными данными объекта
