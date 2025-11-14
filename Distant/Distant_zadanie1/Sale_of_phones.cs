@@ -8,7 +8,6 @@ namespace Remote_assignment_1
         public string PhoneModel; // Модель телефона
         public int Quantity;      // Количество проданных единиц
         public double Price;      // Цена за единицу для клиента
-        public double Cost;       // Затраты магазина на телефоны
          
         // Вычисление дохода магазина
         public double Revenue => Price * Quantity;
