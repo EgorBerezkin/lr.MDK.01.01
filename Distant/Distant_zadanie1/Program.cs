@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace Remote_assignment_1
         static void Main(string[] args)
         {
             Console.WriteLine("------АНАЛИЗ ПРОДАЖ МОБИЛЬНЫХ ТЕЛЕФОНОВ------");
+            // Создал список и заполнил его данными
             List<Sale_of_phones> Phone = new List<Sale_of_phones>();
             Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 12), PhoneModel = "Iphone 16", Quantity = 7, Price = 89900 });
             Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 12), PhoneModel = "Samsung Galaxy A51", Quantity = 4, Price = 69900 });
@@ -20,45 +22,27 @@ namespace Remote_assignment_1
             Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 14), PhoneModel = "Iphone 16", Quantity = 2, Price = 99000 });
             Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 15), PhoneModel = "Samsung Galaxy S27", Quantity = 2, Price = 89900 });
             Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 15), PhoneModel = "IPhone Pro 15", Quantity = 5, Price = 99000 });
-
             // Задаем временной диапазон для анализа данных
             DateTime startDate = new DateTime(2025, 11, 12);
             DateTime endDate = new DateTime(2025, 11, 15);
             // а) Общая сумма проданного за период
-            double totalRevenue = salesData
-            .Where(sale => sale.Date >= startDate && sale.Date <= endDate) // фильтруем продажи по заданному периоду
-            .Sum(sale => sale.Revenue);                                    // суммируем выручку всех отфильтрованных продаж
-            Console.WriteLine($"а) Общая сумма проданных телефонов за период {startDate:dd.MM.yyyy} - {endDate:dd.MM.yyyy}: {totalRevenue} рублей");
+            Console.WriteLine($"а) Общая сумма проданных телефонов за период: " + Functions.FindSalesPrice(Phone, startDate, endDate) + " рублей");
             // б) Самый продаваемый телефон и телефон с наименьшими продажами
-            var phoneStats = salesData
-            .GroupBy(s => s.PhoneModel) // группировка продаж по моделям телефонов
-            .Select(g => new { Model = g.Key, TotalSold = g.Sum(s => s.Quantity) }) // создаем анонимный объект для групп с названием
-                                                                                    // модели и общим количеством продаж
-            .OrderByDescending(x => x.TotalSold)                                    // сортировка по убыванию количества продаж
-            .ToList();
-            string BestPhone = phoneStats.First().Model;
-            string WorstPhone = phoneStats.Last().Model;
-            Console.WriteLine($"б) Результаты анализа продаж:");
-            Console.WriteLine($"   • Самый продаваемый телефон: {BestPhone}");
-            Console.WriteLine($"   • Самый непродаваемый телефон: {WorstPhone}");
+            string bestSellingPhone = Functions.FindBestPhoneModel(Phone);
+            string worstSellingPhone = Functions.FindWorstPhoneModel(Phone);
+            Console.WriteLine("б) Самый продаваемый телефон и телефон с наименьшими продажами");
+            Console.WriteLine($"       Самый продаваемый телефон: {bestSellingPhone}");
+            Console.WriteLine($"       Телефон с наименьшими продажами: {worstSellingPhone}");
             // в) Два телефона, приносящие наибольшую прибыль
-            var topPhones = salesData
-            .GroupBy(s => s.PhoneModel)
-            .Select(g => new { Model = g.Key, Profit = g.Sum(s => s.Revenue) })
-            .OrderByDescending(x => x.Profit)
-            .Take(2)                                                                // берем первые 2 записи после сортировки
-            .Select(x => x.Model)                                                   // извлекаем только названия моделей
-            .ToList();                                                              
-            Console.WriteLine($"в) Телефоны с наибольшей прибылью:");
-            for (int i = 0; i < topPhones.Count; i++)
-            {
-                Console.WriteLine($"    {i + 1}. {topPhones[i]}");
-            }
+            string[] profitablePhones = Functions.FindProfitablePhones(Phone);
+            Console.WriteLine("в) Два телефона, приносящие наибольшую прибыль:");
+            Console.WriteLine($"       1. {profitablePhones[0]}");
+            Console.WriteLine($"       2. {profitablePhones[1]}");
             // Отображение временного ряда, сортировка по дате
-            Console.WriteLine("4. Временной ряд продаж:");
+            Console.WriteLine("Временной ряд продаж:");
             Console.WriteLine("Дата            Модель                  Количество      Выручка");
             Console.WriteLine("---------------------------------------------------------------------");
-            var timeSeries = salesData.OrderBy(sale => sale.Date);                 // сортировка всех продаж по дате
+            var timeSeries = Phone.OrderBy(sale => sale.Date);                 // сортировка всех продаж по дате
             foreach (var sale in timeSeries)
             {
                 Console.WriteLine($"{sale.Date:dd.MM.yyyy}      {sale.PhoneModel,-20}    {sale.Quantity}               {sale.Revenue} рублей");
