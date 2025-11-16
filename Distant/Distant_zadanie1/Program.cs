@@ -11,57 +11,16 @@ namespace Remote_assignment_1
         static void Main(string[] args)
         {
             Console.WriteLine("------АНАЛИЗ ПРОДАЖ МОБИЛЬНЫХ ТЕЛЕФОНОВ------");
-            var salesData = new List<Sale_of_phones>  // создает список объектов типа Sale_of_phones
-            {
-                new Sale_of_phones {
-                Date = new DateTime(2025, 11, 12),
-                PhoneModel = "IPhone 16",
-                Quantity = 7,
-                Price = 89900
-            },
-            new Sale_of_phones {
-                Date = new DateTime(2025, 11, 12),
-                PhoneModel = "Samsung Galaxy A51",
-                Quantity = 4,
-                Price = 69900
-            },
-            new Sale_of_phones {
-                Date = new DateTime(2025, 11, 13),
-                PhoneModel = "IPhone Pro 15",
-                Quantity = 5,
-                Price = 119000
-            },
-            new Sale_of_phones {
-                Date = new DateTime(2025, 11, 13),
-                PhoneModel = "Samsung Galaxy A51",
-                Quantity = 1,
-                Price = 55900
-            },
-            new Sale_of_phones {
-                Date = new DateTime(2025, 11, 14),
-                PhoneModel = "Samsung Galaxy S27",
-                Quantity = 3,
-                Price = 81900
-            },
-            new Sale_of_phones {
-                Date = new DateTime(2025, 11, 14),
-                PhoneModel = "IPhone 16",
-                Quantity = 2,
-                Price = 99000
-            },
-            new Sale_of_phones {
-                Date = new DateTime(2025, 11, 15),
-                PhoneModel = "Samsung Galaxy S27",
-                Quantity = 2,
-                Price = 89900
-            },
-            new Sale_of_phones {
-                Date = new DateTime(2025, 11, 15),
-                PhoneModel = "IPhone Pro 15",
-                Quantity = 5,
-                Price = 99000
-            }
-            };
+            List<Sale_of_phones> Phone = new List<Sale_of_phones>();
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 12), PhoneModel = "Iphone 16", Quantity = 7, Price = 89900 });
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 12), PhoneModel = "Samsung Galaxy A51", Quantity = 4, Price = 69900 });
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 13), PhoneModel = "IPhone Pro 15", Quantity = 5, Price = 119000 });
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 13), PhoneModel = "Samsung Galaxy A51", Quantity = 1, Price = 55900 });
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 14), PhoneModel = "Samsung Galaxy S27", Quantity = 3, Price = 81900 });
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 14), PhoneModel = "Iphone 16", Quantity = 2, Price = 99000 });
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 15), PhoneModel = "Samsung Galaxy S27", Quantity = 2, Price = 89900 });
+            Phone.Add(new Sale_of_phones { Date = new DateTime(2025, 11, 15), PhoneModel = "IPhone Pro 15", Quantity = 5, Price = 99000 });
+
             // Задаем временной диапазон для анализа данных
             DateTime startDate = new DateTime(2025, 11, 12);
             DateTime endDate = new DateTime(2025, 11, 15);
