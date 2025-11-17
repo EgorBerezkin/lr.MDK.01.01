@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,6 @@ namespace Zadacha_1
             /// Сведения о продукции разнесены по соответствующим категориям: супы, салаты, выпечка, гарниры и т.д. Имеется 
             /// информация о числе заказанных блюд ото дня ко дню. По запросу пользователя – «категория блюд» - вывести на экран
             /// список продукции в порядке от самой востребованной к наименее популярной. Подсчитайте среднее число заказов данной категории.
-            Console.WriteLine("Здравствуйте, введите категорию блюд, которая вас интересует" +
-                          "(супы, салаты, десерты, гарниры): ");
-            string Category = Console.ReadLine();
-            string[] СategoriesOfDishes = new string[] {"Супы", "Салаты", "Десерты", "Гарниры"};
-
             List<Orders> Dishes = new List<Orders>();
             Dishes.Add(new Orders { NameDish = "Борщ", СategoriesOfDishes = "Супы", NumberOfDishes = 3, OrderDate = new DateTime(2025, 11, 15) });
             Dishes.Add(new Orders { NameDish = "Солянка", СategoriesOfDishes = "Супы", NumberOfDishes = 5, OrderDate = new DateTime(2025, 11, 15) });
@@ -29,6 +25,9 @@ namespace Zadacha_1
             Dishes.Add(new Orders { NameDish = "Макароны", СategoriesOfDishes = "Гарниры", NumberOfDishes = 3, OrderDate = new DateTime(2025, 11, 15) });
             Dishes.Add(new Orders { NameDish = "Картошка", СategoriesOfDishes = "Гарниры", NumberOfDishes = 7, OrderDate = new DateTime(2025, 11, 15) });
 
+            Console.WriteLine("Здравствуйте, введите категорию блюд, которая вас интересует" +
+                          "(супы, салаты, десерты, гарниры): ");
+            string Categories = Console.ReadLine();
 
         }
     }
