@@ -86,10 +86,14 @@ namespace Remote_assignment_1
         {
             // Создаем словарь для хранения общей выручки по каждой модели
             Dictionary<string, double> revenueByPhone = new Dictionary<string, double>();
+            // Цикл по всем элементам списка продаж
             foreach (Sale_of_phones sale in Phone)
             {
+                // Извлекает модель телефона и выручку из текущего объекта продажи
                 string phoneModel = sale.PhoneModel;
                 double revenue = sale.Revenue;
+                // Если модель есть в словаре, то прибавляем выручку к существующей сумме
+                // Если модели нет, то добавляем новую запись в словарь
                 if (revenueByPhone.ContainsKey(phoneModel))
                 {
                     revenueByPhone[phoneModel] += revenue;
@@ -101,7 +105,9 @@ namespace Remote_assignment_1
             }
             // Сортируем модели по убыванию выручки и берем две лучшие
             IOrderedEnumerable<KeyValuePair<string, double>> sortedPhones = revenueByPhone.OrderByDescending(x => x.Value);
+            // Берём две первые записи в списке
             KeyValuePair<string, double>[] topPhones = sortedPhones.Take(2).ToArray();
+            // Создаем массив для результата
             string[] result = new string[2];
             if (topPhones.Length >= 1)
                 result[0] = topPhones[0].Key;

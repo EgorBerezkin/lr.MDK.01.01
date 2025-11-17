@@ -34,6 +34,7 @@ namespace Remote_assignment_1
             Console.WriteLine($"       Самый продаваемый телефон: {bestSellingPhone}");
             Console.WriteLine($"       Телефон с наименьшими продажами: {worstSellingPhone}");
             // в) Два телефона, приносящие наибольшую прибыль
+            // Вызывает функцию и сохраняет результат массива
             string[] profitablePhones = Functions.FindProfitablePhones(Phone);
             Console.WriteLine("в) Два телефона, приносящие наибольшую прибыль:");
             Console.WriteLine($"       1. {profitablePhones[0]}");
