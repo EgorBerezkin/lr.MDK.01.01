@@ -9,4 +9,5 @@ namespace Zadacha_1
         public int NumberOfDishes;        // количство заказанных блюд
         public DateTime OrderDate;        // число заказа
     }
+
 }
