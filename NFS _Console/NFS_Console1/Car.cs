@@ -8,16 +8,25 @@ namespace NFS_Console1
 {
     public class Car
     {
-        private string Name_;
-        private double Speed_;
-
+        private string model_;
+        private double speed_;
+        // Наименование
         public string GetModel()
         {
-            return Name_;
+            return model_;
         }
-        public void SetModel(string Name)
+        public void SetModel(string model)
         {
-            Name_ = Name;
+            model_ = model;
+        }
+        // Скорость
+        public double GetSpeed()
+        {
+            return speed_;
+        }
+        public void SetSpeed (double speed)
+        {
+            speed_ = speed;
         }
     }
 }
