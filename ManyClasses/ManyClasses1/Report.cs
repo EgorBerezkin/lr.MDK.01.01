@@ -15,18 +15,23 @@ namespace ManyClasses1
         }
         public string ConvertReportToString(ReportRow row)
         {
-            return row.Product + ";" + row.Quantity + ";" + row.Price;
+            return row.Product + "; " + row.Quantity + "; " + row.Price;
         }
         public string ConvertAllToString()
         {
             if (rows_.Count == 0)
                 return "Отчет пуст";
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Продукт; Количество; Цена");
             foreach (ReportRow row in rows_)
             {
                 sb.AppendLine(ConvertReportToString(row));
             }
             return sb.ToString();
+        }
+        public override string ToString()
+        {
+            return ConvertAllToString();
         }
         public void CalculateSum()
         {
@@ -35,7 +40,7 @@ namespace ManyClasses1
             {
                 sum += row.Quantity * row.Price;
             }
-            Console.WriteLine("Сумма  - " + sum);
+            Console.WriteLine("Сумма: " + sum + "руб.");
         }
     }
 }
