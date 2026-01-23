@@ -18,5 +18,7 @@ namespace Project
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+
+
     }
 }
