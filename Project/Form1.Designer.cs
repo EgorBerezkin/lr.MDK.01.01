@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.Panel = new System.Windows.Forms.Panel();
-            this.ListBox = new System.Windows.Forms.ListBox();
-            this.FotoPictureBox = new System.Windows.Forms.PictureBox();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelAge = new System.Windows.Forms.Label();
-            this.labelArgs = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
+            this.labelArgs = new System.Windows.Forms.Label();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.FotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.ListBox = new System.Windows.Forms.ListBox();
             this.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -52,40 +52,14 @@
             this.Panel.Size = new System.Drawing.Size(674, 450);
             this.Panel.TabIndex = 2;
             // 
-            // ListBox
+            // labelNumber
             // 
-            this.ListBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ListBox.FormattingEnabled = true;
-            this.ListBox.Location = new System.Drawing.Point(0, 0);
-            this.ListBox.Name = "ListBox";
-            this.ListBox.Size = new System.Drawing.Size(120, 450);
-            this.ListBox.TabIndex = 3;
-            // 
-            // FotoPictureBox
-            // 
-            this.FotoPictureBox.Location = new System.Drawing.Point(18, 12);
-            this.FotoPictureBox.Name = "FotoPictureBox";
-            this.FotoPictureBox.Size = new System.Drawing.Size(100, 135);
-            this.FotoPictureBox.TabIndex = 0;
-            this.FotoPictureBox.TabStop = false;
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(133, 21);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(57, 13);
-            this.labelName.TabIndex = 1;
-            this.labelName.Text = "labelName";
-            // 
-            // labelAge
-            // 
-            this.labelAge.AutoSize = true;
-            this.labelAge.Location = new System.Drawing.Point(133, 43);
-            this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(48, 13);
-            this.labelAge.TabIndex = 2;
-            this.labelAge.Text = "labelAge";
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Location = new System.Drawing.Point(133, 87);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(66, 13);
+            this.labelNumber.TabIndex = 4;
+            this.labelNumber.Text = "labelNumber";
             // 
             // labelArgs
             // 
@@ -96,14 +70,41 @@
             this.labelArgs.TabIndex = 3;
             this.labelArgs.Text = "labelArgs";
             // 
-            // labelNumber
+            // labelAge
             // 
-            this.labelNumber.AutoSize = true;
-            this.labelNumber.Location = new System.Drawing.Point(133, 87);
-            this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(66, 13);
-            this.labelNumber.TabIndex = 4;
-            this.labelNumber.Text = "labelNumber";
+            this.labelAge.AutoSize = true;
+            this.labelAge.Location = new System.Drawing.Point(133, 43);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(48, 13);
+            this.labelAge.TabIndex = 2;
+            this.labelAge.Text = "labelAge";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(133, 21);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(57, 13);
+            this.labelName.TabIndex = 1;
+            this.labelName.Text = "labelName";
+            // 
+            // FotoPictureBox
+            // 
+            this.FotoPictureBox.Location = new System.Drawing.Point(18, 12);
+            this.FotoPictureBox.Name = "FotoPictureBox";
+            this.FotoPictureBox.Size = new System.Drawing.Size(100, 135);
+            this.FotoPictureBox.TabIndex = 0;
+            this.FotoPictureBox.TabStop = false;
+            // 
+            // ListBox
+            // 
+            this.ListBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ListBox.FormattingEnabled = true;
+            this.ListBox.Location = new System.Drawing.Point(0, 0);
+            this.ListBox.Name = "ListBox";
+            this.ListBox.Size = new System.Drawing.Size(120, 450);
+            this.ListBox.TabIndex = 3;
+            this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
             // 
             // MainForm
             // 

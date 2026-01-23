@@ -12,6 +12,7 @@ namespace Project
         private int age_;
         private double args_;
         private int number_;
+        private string fotocartochka_;
 
         public Students()
         {
@@ -19,17 +20,37 @@ namespace Project
             age_ = 15;
         }
 
-        public string GetName()
+        public string Name
         {
-            return name_;
+            get{ return name_; }
         }
 
-        public Students(string name_, int age_, double args_, int number_)
+        public string Age
         {
-            this.name_ = name_;
-            this.age_ = age_;
-            this.args_ = args_;
-            this.number_ = number_;
+            get { return Convert.ToString(age_); }
+        }
+
+        public string Args
+        {
+            get { return Convert.ToString(args_); }
+        }
+
+        public string Number
+        {
+            get { return Convert.ToString(number_); }
+        }
+        public string Fotokartochka
+        {
+            get { return Convert.ToString(fotocartochka_); }
+        }
+
+        public Students(string name, int age, double args, int number, string fotocartochka)
+        {
+            this.name_ = name;
+            this.age_ = age;
+            this.args_ = args;
+            this.number_ = number;
+            this.fotocartochka_ = fotocartochka;
         }
     }
 }
