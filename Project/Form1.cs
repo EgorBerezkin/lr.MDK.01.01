@@ -44,19 +44,5 @@ namespace Project
                 FotoPictureBox.Image = Image.FromFile(st_name.Fotokartochka);
             }
         }
-        private void Panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelAge_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FotoPictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

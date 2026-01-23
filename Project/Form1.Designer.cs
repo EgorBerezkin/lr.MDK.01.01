@@ -55,7 +55,6 @@
             this.Panel.Size = new System.Drawing.Size(485, 313);
             this.Panel.TabIndex = 2;
             this.Panel.UseWaitCursor = true;
-            this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Paint);
             // 
             // labelNumber
             // 
@@ -89,7 +88,6 @@
             this.labelAge.TabIndex = 2;
             this.labelAge.Text = "labelAge";
             this.labelAge.UseWaitCursor = true;
-            this.labelAge.Click += new System.EventHandler(this.labelAge_Click);
             // 
             // labelName
             // 
@@ -111,7 +109,6 @@
             this.FotoPictureBox.TabIndex = 0;
             this.FotoPictureBox.TabStop = false;
             this.FotoPictureBox.UseWaitCursor = true;
-            this.FotoPictureBox.Click += new System.EventHandler(this.FotoPictureBox_Click);
             // 
             // ListBox
             // 
