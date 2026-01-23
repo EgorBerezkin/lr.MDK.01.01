@@ -41,80 +41,103 @@
             // 
             // Panel
             // 
+            this.Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel.AutoScroll = true;
+            this.Panel.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.Panel.Controls.Add(this.labelNumber);
             this.Panel.Controls.Add(this.labelArgs);
+            this.Panel.Controls.Add(this.FotoPictureBox);
             this.Panel.Controls.Add(this.labelAge);
             this.Panel.Controls.Add(this.labelName);
-            this.Panel.Controls.Add(this.FotoPictureBox);
-            this.Panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Panel.Location = new System.Drawing.Point(126, 0);
+            this.Panel.Location = new System.Drawing.Point(159, 0);
+            this.Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(674, 450);
+            this.Panel.Size = new System.Drawing.Size(485, 313);
             this.Panel.TabIndex = 2;
+            this.Panel.UseWaitCursor = true;
+            this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Paint);
             // 
             // labelNumber
             // 
             this.labelNumber.AutoSize = true;
-            this.labelNumber.Location = new System.Drawing.Point(133, 87);
+            this.labelNumber.Location = new System.Drawing.Point(249, 95);
+            this.labelNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(66, 13);
+            this.labelNumber.Size = new System.Drawing.Size(85, 16);
             this.labelNumber.TabIndex = 4;
             this.labelNumber.Text = "labelNumber";
+            this.labelNumber.UseWaitCursor = true;
             // 
             // labelArgs
             // 
             this.labelArgs.AutoSize = true;
-            this.labelArgs.Location = new System.Drawing.Point(133, 65);
+            this.labelArgs.Location = new System.Drawing.Point(249, 73);
+            this.labelArgs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelArgs.Name = "labelArgs";
-            this.labelArgs.Size = new System.Drawing.Size(50, 13);
+            this.labelArgs.Size = new System.Drawing.Size(65, 16);
             this.labelArgs.TabIndex = 3;
             this.labelArgs.Text = "labelArgs";
+            this.labelArgs.UseWaitCursor = true;
             // 
             // labelAge
             // 
             this.labelAge.AutoSize = true;
-            this.labelAge.Location = new System.Drawing.Point(133, 43);
+            this.labelAge.Location = new System.Drawing.Point(249, 50);
+            this.labelAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(48, 13);
+            this.labelAge.Size = new System.Drawing.Size(62, 16);
             this.labelAge.TabIndex = 2;
             this.labelAge.Text = "labelAge";
+            this.labelAge.UseWaitCursor = true;
+            this.labelAge.Click += new System.EventHandler(this.labelAge_Click);
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(133, 21);
+            this.labelName.Location = new System.Drawing.Point(249, 29);
+            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(57, 13);
+            this.labelName.Size = new System.Drawing.Size(74, 16);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "labelName";
+            this.labelName.UseWaitCursor = true;
             // 
             // FotoPictureBox
             // 
-            this.FotoPictureBox.Location = new System.Drawing.Point(18, 12);
+            this.FotoPictureBox.Location = new System.Drawing.Point(24, 15);
+            this.FotoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FotoPictureBox.Name = "FotoPictureBox";
-            this.FotoPictureBox.Size = new System.Drawing.Size(100, 135);
+            this.FotoPictureBox.Size = new System.Drawing.Size(161, 175);
             this.FotoPictureBox.TabIndex = 0;
             this.FotoPictureBox.TabStop = false;
+            this.FotoPictureBox.UseWaitCursor = true;
+            this.FotoPictureBox.Click += new System.EventHandler(this.FotoPictureBox_Click);
             // 
             // ListBox
             // 
+            this.ListBox.BackColor = System.Drawing.Color.Brown;
             this.ListBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.ListBox.FormattingEnabled = true;
+            this.ListBox.ItemHeight = 16;
             this.ListBox.Location = new System.Drawing.Point(0, 0);
+            this.ListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListBox.Name = "ListBox";
-            this.ListBox.Size = new System.Drawing.Size(120, 450);
+            this.ListBox.Size = new System.Drawing.Size(159, 311);
             this.ListBox.TabIndex = 3;
+            this.ListBox.UseWaitCursor = true;
             this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(645, 311);
             this.Controls.Add(this.ListBox);
             this.Controls.Add(this.Panel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Students";
+            this.UseWaitCursor = true;
             this.Panel.ResumeLayout(false);
             this.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).EndInit();

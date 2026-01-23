@@ -14,34 +14,30 @@ namespace Project
         private int number_;
         private string fotocartochka_;
 
-        public Students()
-        {
-            name_ = "Вася Пупкин";
-            age_ = 15;
-        }
+
 
         public string Name
         {
             get{ return name_; }
         }
 
-        public string Age
+        public int Age
         {
-            get { return Convert.ToString(age_); }
+            get { return age_; }
         }
 
-        public string Args
+        public double Args
         {
-            get { return Convert.ToString(args_); }
+            get { return args_; }
         }
 
-        public string Number
+        public int Number
         {
-            get { return Convert.ToString(number_); }
+            get { return number_; }
         }
         public string Fotokartochka
         {
-            get { return Convert.ToString(fotocartochka_); }
+            get { return fotocartochka_; }
         }
 
         public Students(string name, int age, double args, int number, string fotocartochka)
