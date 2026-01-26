@@ -30,7 +30,7 @@
         {
             this.DatePickerTime = new System.Windows.Forms.DateTimePicker();
             this.InputTextBox = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,32 +43,31 @@
             this.DatePickerTime.CalendarTrailingForeColor = System.Drawing.Color.LightPink;
             this.DatePickerTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.DatePickerTime.Location = new System.Drawing.Point(83, 119);
-            this.DatePickerTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DatePickerTime.Margin = new System.Windows.Forms.Padding(4);
             this.DatePickerTime.Name = "DatePickerTime";
             this.DatePickerTime.Size = new System.Drawing.Size(184, 22);
-            this.DatePickerTime.TabIndex = 3;
-            this.DatePickerTime.Value = new System.DateTime(2026, 1, 22, 0, 0, 0, 0);
+            this.DatePickerTime.TabIndex = 4;
+            this.DatePickerTime.Value = new System.DateTime(2026, 1, 22, 0, 1, 0, 0);
             // 
             // InputTextBox
             // 
             this.InputTextBox.BackColor = System.Drawing.Color.LightPink;
             this.InputTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.InputTextBox.Location = new System.Drawing.Point(363, 171);
-            this.InputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.InputTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.InputTextBox.Name = "InputTextBox";
             this.InputTextBox.Size = new System.Drawing.Size(208, 34);
             this.InputTextBox.TabIndex = 5;
             // 
-            // richTextBox1
+            // richTextBox
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.LightPink;
-            this.richTextBox1.Location = new System.Drawing.Point(21, 229);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(549, 85);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.richTextBox.BackColor = System.Drawing.Color.LightPink;
+            this.richTextBox.Location = new System.Drawing.Point(21, 229);
+            this.richTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(549, 85);
+            this.richTextBox.TabIndex = 6;
+            this.richTextBox.Text = "";
             // 
             // label4
             // 
@@ -117,7 +116,7 @@
             this.ButtonCheck.BackColor = System.Drawing.Color.LightPink;
             this.ButtonCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonCheck.Location = new System.Drawing.Point(363, 15);
-            this.ButtonCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonCheck.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonCheck.Name = "ButtonCheck";
             this.ButtonCheck.Size = new System.Drawing.Size(209, 70);
             this.ButtonCheck.TabIndex = 10;
@@ -135,10 +134,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.InputTextBox);
             this.Controls.Add(this.DatePickerTime);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCheck";
             this.Text = "Проверка числа";
             this.ResumeLayout(false);
@@ -149,7 +148,7 @@
         #endregion
         private System.Windows.Forms.DateTimePicker DatePickerTime;
         private System.Windows.Forms.TextBox InputTextBox;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
