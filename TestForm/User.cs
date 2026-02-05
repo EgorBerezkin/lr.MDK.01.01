@@ -12,10 +12,10 @@ namespace TestForm
         private string password_;
 
         public User(string login, string password)
-               {
-                     login_ = login;
-                     password_ = password;
-               }
+        {
+            login_ = login;
+            password_ = password;
+        }
 
         public string Login
         {

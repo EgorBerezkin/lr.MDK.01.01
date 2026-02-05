@@ -9,5 +9,6 @@ namespace TestForm
     interface IUsersInterface
     {
         List<User> Load();
+        bool Authorize(string login,  string password);
     }
 }

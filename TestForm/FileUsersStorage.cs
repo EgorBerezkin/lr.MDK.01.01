@@ -22,6 +22,23 @@ namespace TestForm
             }
             return allers;
         }
+        public bool Authorize(string login, string password)
+        {
+            List<User> Alls = Load();
+            User user = new User(login, password);
+            return Contains(Alls, user);
+        }
+        private bool Contains(List<User> users, User user)
+        {
+            foreach (User u in users)
+            {
+                if (user.Login == u.Login && u.Password == user.Password)
+                {
+                    return true;
+                }
+            }
 
+            return false;
+        }
     }
 }
