@@ -30,13 +30,14 @@
         {
             this.LabelNaimenowanie = new System.Windows.Forms.Label();
             this.Panel = new System.Windows.Forms.Panel();
-            this.FilmsComboBox = new System.Windows.Forms.ComboBox();
-            this.FotoPictureBox = new System.Windows.Forms.PictureBox();
-            this.LabelOpisanie = new System.Windows.Forms.Label();
-            this.LabelRecjiser = new System.Windows.Forms.Label();
-            this.LabelDate = new System.Windows.Forms.Label();
-            this.LabelSum = new System.Windows.Forms.Label();
             this.LabelNumber = new System.Windows.Forms.Label();
+            this.LabelSum = new System.Windows.Forms.Label();
+            this.LabelDate = new System.Windows.Forms.Label();
+            this.LabelRecjiser = new System.Windows.Forms.Label();
+            this.LabelOpisanie = new System.Windows.Forms.Label();
+            this.FotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.FilmsComboBox = new System.Windows.Forms.ComboBox();
+            this.FilmsListBox = new System.Windows.Forms.ListBox();
             this.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -44,14 +45,16 @@
             // LabelNaimenowanie
             // 
             this.LabelNaimenowanie.AutoSize = true;
-            this.LabelNaimenowanie.Location = new System.Drawing.Point(179, 24);
+            this.LabelNaimenowanie.Location = new System.Drawing.Point(256, 24);
+            this.LabelNaimenowanie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelNaimenowanie.Name = "LabelNaimenowanie";
-            this.LabelNaimenowanie.Size = new System.Drawing.Size(35, 13);
+            this.LabelNaimenowanie.Size = new System.Drawing.Size(44, 16);
             this.LabelNaimenowanie.TabIndex = 0;
             this.LabelNaimenowanie.Text = "label1";
             // 
             // Panel
             // 
+            this.Panel.Controls.Add(this.FilmsComboBox);
             this.Panel.Controls.Add(this.LabelNumber);
             this.Panel.Controls.Add(this.LabelSum);
             this.Panel.Controls.Add(this.LabelDate);
@@ -59,81 +62,102 @@
             this.Panel.Controls.Add(this.LabelOpisanie);
             this.Panel.Controls.Add(this.FotoPictureBox);
             this.Panel.Controls.Add(this.LabelNaimenowanie);
-            this.Panel.Location = new System.Drawing.Point(234, -2);
+            this.Panel.Location = new System.Drawing.Point(179, -2);
+            this.Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(486, 309);
+            this.Panel.Size = new System.Drawing.Size(923, 380);
             this.Panel.TabIndex = 1;
-            // 
-            // FilmsComboBox
-            // 
-            this.FilmsComboBox.FormattingEnabled = true;
-            this.FilmsComboBox.Location = new System.Drawing.Point(9, 6);
-            this.FilmsComboBox.Name = "FilmsComboBox";
-            this.FilmsComboBox.Size = new System.Drawing.Size(215, 21);
-            this.FilmsComboBox.TabIndex = 2;
-            this.FilmsComboBox.SelectedIndexChanged += new System.EventHandler(this.FilmsComboBox_SelectedIndexChanged);
-            // 
-            // FotoPictureBox
-            // 
-            this.FotoPictureBox.Location = new System.Drawing.Point(16, 13);
-            this.FotoPictureBox.Name = "FotoPictureBox";
-            this.FotoPictureBox.Size = new System.Drawing.Size(142, 198);
-            this.FotoPictureBox.TabIndex = 1;
-            this.FotoPictureBox.TabStop = false;
-            // 
-            // LabelOpisanie
-            // 
-            this.LabelOpisanie.AutoSize = true;
-            this.LabelOpisanie.Location = new System.Drawing.Point(179, 53);
-            this.LabelOpisanie.Name = "LabelOpisanie";
-            this.LabelOpisanie.Size = new System.Drawing.Size(35, 13);
-            this.LabelOpisanie.TabIndex = 2;
-            this.LabelOpisanie.Text = "label2";
-            // 
-            // LabelRecjiser
-            // 
-            this.LabelRecjiser.AutoSize = true;
-            this.LabelRecjiser.Location = new System.Drawing.Point(179, 122);
-            this.LabelRecjiser.Name = "LabelRecjiser";
-            this.LabelRecjiser.Size = new System.Drawing.Size(35, 13);
-            this.LabelRecjiser.TabIndex = 3;
-            this.LabelRecjiser.Text = "label3";
-            // 
-            // LabelDate
-            // 
-            this.LabelDate.AutoSize = true;
-            this.LabelDate.Location = new System.Drawing.Point(179, 147);
-            this.LabelDate.Name = "LabelDate";
-            this.LabelDate.Size = new System.Drawing.Size(35, 13);
-            this.LabelDate.TabIndex = 4;
-            this.LabelDate.Text = "label4";
-            // 
-            // LabelSum
-            // 
-            this.LabelSum.AutoSize = true;
-            this.LabelSum.Location = new System.Drawing.Point(179, 178);
-            this.LabelSum.Name = "LabelSum";
-            this.LabelSum.Size = new System.Drawing.Size(35, 13);
-            this.LabelSum.TabIndex = 5;
-            this.LabelSum.Text = "label5";
             // 
             // LabelNumber
             // 
             this.LabelNumber.AutoSize = true;
-            this.LabelNumber.Location = new System.Drawing.Point(344, 147);
+            this.LabelNumber.Location = new System.Drawing.Point(438, 206);
+            this.LabelNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelNumber.Name = "LabelNumber";
-            this.LabelNumber.Size = new System.Drawing.Size(35, 13);
+            this.LabelNumber.Size = new System.Drawing.Size(44, 16);
             this.LabelNumber.TabIndex = 6;
             this.LabelNumber.Text = "label6";
             // 
+            // LabelSum
+            // 
+            this.LabelSum.AutoSize = true;
+            this.LabelSum.Location = new System.Drawing.Point(256, 231);
+            this.LabelSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelSum.Name = "LabelSum";
+            this.LabelSum.Size = new System.Drawing.Size(44, 16);
+            this.LabelSum.TabIndex = 5;
+            this.LabelSum.Text = "label5";
+            // 
+            // LabelDate
+            // 
+            this.LabelDate.AutoSize = true;
+            this.LabelDate.Location = new System.Drawing.Point(256, 206);
+            this.LabelDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelDate.Name = "LabelDate";
+            this.LabelDate.Size = new System.Drawing.Size(44, 16);
+            this.LabelDate.TabIndex = 4;
+            this.LabelDate.Text = "label4";
+            // 
+            // LabelRecjiser
+            // 
+            this.LabelRecjiser.AutoSize = true;
+            this.LabelRecjiser.Location = new System.Drawing.Point(256, 181);
+            this.LabelRecjiser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelRecjiser.Name = "LabelRecjiser";
+            this.LabelRecjiser.Size = new System.Drawing.Size(44, 16);
+            this.LabelRecjiser.TabIndex = 3;
+            this.LabelRecjiser.Text = "label3";
+            // 
+            // LabelOpisanie
+            // 
+            this.LabelOpisanie.AutoSize = true;
+            this.LabelOpisanie.Location = new System.Drawing.Point(256, 58);
+            this.LabelOpisanie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelOpisanie.Name = "LabelOpisanie";
+            this.LabelOpisanie.Size = new System.Drawing.Size(44, 16);
+            this.LabelOpisanie.TabIndex = 2;
+            this.LabelOpisanie.Text = "label2";
+            // 
+            // FotoPictureBox
+            // 
+            this.FotoPictureBox.Location = new System.Drawing.Point(4, 15);
+            this.FotoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FotoPictureBox.Name = "FotoPictureBox";
+            this.FotoPictureBox.Size = new System.Drawing.Size(210, 278);
+            this.FotoPictureBox.TabIndex = 1;
+            this.FotoPictureBox.TabStop = false;
+            // 
+            // FilmsComboBox
+            // 
+            this.FilmsComboBox.BackColor = System.Drawing.Color.DarkGray;
+            this.FilmsComboBox.FormattingEnabled = true;
+            this.FilmsComboBox.Location = new System.Drawing.Point(369, 21);
+            this.FilmsComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FilmsComboBox.Name = "FilmsComboBox";
+            this.FilmsComboBox.Size = new System.Drawing.Size(261, 24);
+            this.FilmsComboBox.TabIndex = 2;
+            this.FilmsComboBox.SelectedIndexChanged += new System.EventHandler(this.FilmsComboBox_SelectedIndexChanged);
+            // 
+            // FilmsListBox
+            // 
+            this.FilmsListBox.BackColor = System.Drawing.Color.DarkGray;
+            this.FilmsListBox.FormattingEnabled = true;
+            this.FilmsListBox.ItemHeight = 16;
+            this.FilmsListBox.Location = new System.Drawing.Point(-1, -2);
+            this.FilmsListBox.Name = "FilmsListBox";
+            this.FilmsListBox.Size = new System.Drawing.Size(180, 388);
+            this.FilmsListBox.TabIndex = 2;
+            this.FilmsListBox.SelectedIndexChanged += new System.EventHandler(this.FilmsListBox_SelectedIndexChanged);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(723, 308);
-            this.Controls.Add(this.FilmsComboBox);
+            this.ClientSize = new System.Drawing.Size(1103, 365);
+            this.Controls.Add(this.FilmsListBox);
             this.Controls.Add(this.Panel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Кинофильмы";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -155,6 +179,7 @@
         private System.Windows.Forms.Label LabelOpisanie;
         private System.Windows.Forms.PictureBox FotoPictureBox;
         private System.Windows.Forms.ComboBox FilmsComboBox;
+        private System.Windows.Forms.ListBox FilmsListBox;
     }
 }
 
