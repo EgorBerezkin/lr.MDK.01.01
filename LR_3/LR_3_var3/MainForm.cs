@@ -79,6 +79,9 @@ namespace LR_3_var3
             
             List<string> st_name = kino_.Keys.ToList();
             FilmsListBox.DataSource = st_name;
+
+            StringBuilder reportBuilder = new StringBuilder();
+
             
         }
 
@@ -109,6 +112,32 @@ namespace LR_3_var3
 
             FilmsComboBox.DataSource = films;
             FilmsComboBox.DisplayMember = "Name";
+        }
+
+        private void OtchetButton_Click(object sender, EventArgs e)
+        {
+            // RichTextBox.AppendText("Фильмы по жанру "  + FilmsListBox.Text + ": " + FilmsComboBox.Text + ", " + LabelNumber.Text + " \n");
+
+            string genre = FilmsListBox.SelectedItem as string;
+            // Получаем список фильмов для этого жанра
+            if (kino_.TryGetValue(genre, out List<Films> films))
+            {
+                // Очищаем RichTextBox перед выводом
+                RichTextBox.Clear();
+
+                // Перебираем все фильмы и выводим их информацию
+                foreach (var film in films)
+                {
+                    RichTextBox.AppendText($"Название: {film.Name}, ");
+                    RichTextBox.AppendText($"Осталось прокатов: {film.Number}\n");
+                }
+            }
+
+        }
+
+        private void Button_dobav_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

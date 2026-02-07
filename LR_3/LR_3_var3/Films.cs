@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,5 +62,6 @@ namespace LR_3_var3
             number_ = number;
             foto_ = foto;
         }
+        
     }
 }
