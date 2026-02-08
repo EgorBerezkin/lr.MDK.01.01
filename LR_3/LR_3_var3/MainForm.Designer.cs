@@ -30,6 +30,7 @@
         {
             this.LabelNaimenowanie = new System.Windows.Forms.Label();
             this.Panel = new System.Windows.Forms.Panel();
+            this.Button_dobav = new System.Windows.Forms.Button();
             this.RichTextBox = new System.Windows.Forms.RichTextBox();
             this.OtchetButton = new System.Windows.Forms.Button();
             this.FilmsComboBox = new System.Windows.Forms.ComboBox();
@@ -40,23 +41,26 @@
             this.LabelOpisanie = new System.Windows.Forms.Label();
             this.FotoPictureBox = new System.Windows.Forms.PictureBox();
             this.FilmsListBox = new System.Windows.Forms.ListBox();
-            this.Button_dobav = new System.Windows.Forms.Button();
+            this.NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelNaimenowanie
             // 
             this.LabelNaimenowanie.AutoSize = true;
-            this.LabelNaimenowanie.Location = new System.Drawing.Point(192, 20);
+            this.LabelNaimenowanie.Location = new System.Drawing.Point(256, 25);
+            this.LabelNaimenowanie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelNaimenowanie.Name = "LabelNaimenowanie";
-            this.LabelNaimenowanie.Size = new System.Drawing.Size(35, 13);
+            this.LabelNaimenowanie.Size = new System.Drawing.Size(44, 16);
             this.LabelNaimenowanie.TabIndex = 0;
             this.LabelNaimenowanie.Text = "label1";
             // 
             // Panel
             // 
             this.Panel.BackColor = System.Drawing.Color.DarkKhaki;
+            this.Panel.Controls.Add(this.NumericUpDown);
             this.Panel.Controls.Add(this.Button_dobav);
             this.Panel.Controls.Add(this.RichTextBox);
             this.Panel.Controls.Add(this.OtchetButton);
@@ -68,26 +72,41 @@
             this.Panel.Controls.Add(this.LabelOpisanie);
             this.Panel.Controls.Add(this.FotoPictureBox);
             this.Panel.Controls.Add(this.LabelNaimenowanie);
-            this.Panel.Location = new System.Drawing.Point(134, -2);
+            this.Panel.Location = new System.Drawing.Point(179, -2);
+            this.Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(692, 400);
+            this.Panel.Size = new System.Drawing.Size(923, 492);
             this.Panel.TabIndex = 1;
+            // 
+            // Button_dobav
+            // 
+            this.Button_dobav.BackColor = System.Drawing.Color.RosyBrown;
+            this.Button_dobav.Location = new System.Drawing.Point(628, 284);
+            this.Button_dobav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_dobav.Name = "Button_dobav";
+            this.Button_dobav.Size = new System.Drawing.Size(136, 48);
+            this.Button_dobav.TabIndex = 9;
+            this.Button_dobav.Text = "Добавить";
+            this.Button_dobav.UseVisualStyleBackColor = false;
+            this.Button_dobav.Click += new System.EventHandler(this.Button_dobav_Click);
             // 
             // RichTextBox
             // 
             this.RichTextBox.BackColor = System.Drawing.Color.DarkKhaki;
-            this.RichTextBox.Location = new System.Drawing.Point(0, 292);
+            this.RichTextBox.Location = new System.Drawing.Point(0, 359);
+            this.RichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RichTextBox.Name = "RichTextBox";
-            this.RichTextBox.Size = new System.Drawing.Size(692, 108);
+            this.RichTextBox.Size = new System.Drawing.Size(921, 132);
             this.RichTextBox.TabIndex = 8;
             this.RichTextBox.Text = "";
             // 
             // OtchetButton
             // 
             this.OtchetButton.BackColor = System.Drawing.Color.RosyBrown;
-            this.OtchetButton.Location = new System.Drawing.Point(579, 231);
+            this.OtchetButton.Location = new System.Drawing.Point(772, 284);
+            this.OtchetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OtchetButton.Name = "OtchetButton";
-            this.OtchetButton.Size = new System.Drawing.Size(102, 39);
+            this.OtchetButton.Size = new System.Drawing.Size(136, 48);
             this.OtchetButton.TabIndex = 7;
             this.OtchetButton.Text = "Отчёт";
             this.OtchetButton.UseVisualStyleBackColor = false;
@@ -97,62 +116,69 @@
             // 
             this.FilmsComboBox.BackColor = System.Drawing.Color.DarkGray;
             this.FilmsComboBox.FormattingEnabled = true;
-            this.FilmsComboBox.Location = new System.Drawing.Point(277, 17);
+            this.FilmsComboBox.Location = new System.Drawing.Point(369, 21);
+            this.FilmsComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FilmsComboBox.Name = "FilmsComboBox";
-            this.FilmsComboBox.Size = new System.Drawing.Size(197, 21);
+            this.FilmsComboBox.Size = new System.Drawing.Size(261, 24);
             this.FilmsComboBox.TabIndex = 2;
             this.FilmsComboBox.SelectedIndexChanged += new System.EventHandler(this.FilmsComboBox_SelectedIndexChanged);
             // 
             // LabelNumber
             // 
             this.LabelNumber.AutoSize = true;
-            this.LabelNumber.Location = new System.Drawing.Point(328, 167);
+            this.LabelNumber.Location = new System.Drawing.Point(437, 206);
+            this.LabelNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelNumber.Name = "LabelNumber";
-            this.LabelNumber.Size = new System.Drawing.Size(35, 13);
+            this.LabelNumber.Size = new System.Drawing.Size(44, 16);
             this.LabelNumber.TabIndex = 6;
             this.LabelNumber.Text = "label6";
             // 
             // LabelSum
             // 
             this.LabelSum.AutoSize = true;
-            this.LabelSum.Location = new System.Drawing.Point(192, 188);
+            this.LabelSum.Location = new System.Drawing.Point(256, 231);
+            this.LabelSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelSum.Name = "LabelSum";
-            this.LabelSum.Size = new System.Drawing.Size(35, 13);
+            this.LabelSum.Size = new System.Drawing.Size(44, 16);
             this.LabelSum.TabIndex = 5;
             this.LabelSum.Text = "label5";
             // 
             // LabelDate
             // 
             this.LabelDate.AutoSize = true;
-            this.LabelDate.Location = new System.Drawing.Point(192, 167);
+            this.LabelDate.Location = new System.Drawing.Point(256, 206);
+            this.LabelDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelDate.Name = "LabelDate";
-            this.LabelDate.Size = new System.Drawing.Size(35, 13);
+            this.LabelDate.Size = new System.Drawing.Size(44, 16);
             this.LabelDate.TabIndex = 4;
             this.LabelDate.Text = "label4";
             // 
             // LabelRecjiser
             // 
             this.LabelRecjiser.AutoSize = true;
-            this.LabelRecjiser.Location = new System.Drawing.Point(192, 147);
+            this.LabelRecjiser.Location = new System.Drawing.Point(256, 181);
+            this.LabelRecjiser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelRecjiser.Name = "LabelRecjiser";
-            this.LabelRecjiser.Size = new System.Drawing.Size(35, 13);
+            this.LabelRecjiser.Size = new System.Drawing.Size(44, 16);
             this.LabelRecjiser.TabIndex = 3;
             this.LabelRecjiser.Text = "label3";
             // 
             // LabelOpisanie
             // 
             this.LabelOpisanie.AutoSize = true;
-            this.LabelOpisanie.Location = new System.Drawing.Point(192, 47);
+            this.LabelOpisanie.Location = new System.Drawing.Point(256, 58);
+            this.LabelOpisanie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelOpisanie.Name = "LabelOpisanie";
-            this.LabelOpisanie.Size = new System.Drawing.Size(35, 13);
+            this.LabelOpisanie.Size = new System.Drawing.Size(44, 16);
             this.LabelOpisanie.TabIndex = 2;
             this.LabelOpisanie.Text = "label2";
             // 
             // FotoPictureBox
             // 
-            this.FotoPictureBox.Location = new System.Drawing.Point(3, 12);
+            this.FotoPictureBox.Location = new System.Drawing.Point(4, 15);
+            this.FotoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FotoPictureBox.Name = "FotoPictureBox";
-            this.FotoPictureBox.Size = new System.Drawing.Size(158, 226);
+            this.FotoPictureBox.Size = new System.Drawing.Size(211, 278);
             this.FotoPictureBox.TabIndex = 1;
             this.FotoPictureBox.TabStop = false;
             // 
@@ -160,38 +186,37 @@
             // 
             this.FilmsListBox.BackColor = System.Drawing.Color.RosyBrown;
             this.FilmsListBox.FormattingEnabled = true;
+            this.FilmsListBox.ItemHeight = 16;
             this.FilmsListBox.Location = new System.Drawing.Point(-1, -2);
-            this.FilmsListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FilmsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FilmsListBox.Name = "FilmsListBox";
-            this.FilmsListBox.Size = new System.Drawing.Size(136, 407);
+            this.FilmsListBox.Size = new System.Drawing.Size(180, 500);
             this.FilmsListBox.TabIndex = 2;
             this.FilmsListBox.SelectedIndexChanged += new System.EventHandler(this.FilmsListBox_SelectedIndexChanged);
             // 
-            // Button_dobav
+            // NumericUpDown
             // 
-            this.Button_dobav.BackColor = System.Drawing.Color.RosyBrown;
-            this.Button_dobav.Location = new System.Drawing.Point(471, 231);
-            this.Button_dobav.Name = "Button_dobav";
-            this.Button_dobav.Size = new System.Drawing.Size(102, 39);
-            this.Button_dobav.TabIndex = 9;
-            this.Button_dobav.Text = "Добавить";
-            this.Button_dobav.UseVisualStyleBackColor = false;
-            this.Button_dobav.Click += new System.EventHandler(this.Button_dobav_Click);
+            this.NumericUpDown.Location = new System.Drawing.Point(628, 255);
+            this.NumericUpDown.Name = "NumericUpDown";
+            this.NumericUpDown.Size = new System.Drawing.Size(136, 22);
+            this.NumericUpDown.TabIndex = 10;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(827, 397);
+            this.ClientSize = new System.Drawing.Size(1103, 489);
             this.Controls.Add(this.FilmsListBox);
             this.Controls.Add(this.Panel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Кинофильмы";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Panel.ResumeLayout(false);
             this.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,6 +236,7 @@
         private System.Windows.Forms.Button OtchetButton;
         private System.Windows.Forms.RichTextBox RichTextBox;
         private System.Windows.Forms.Button Button_dobav;
+        private System.Windows.Forms.NumericUpDown NumericUpDown;
     }
 }
 

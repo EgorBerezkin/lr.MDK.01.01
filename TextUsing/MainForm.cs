@@ -64,5 +64,10 @@ namespace TextUsing
                 MessageBox.Show("Число меньше загаданного");
             }
         }
+
+        private void FormCheck_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,10 @@ namespace LR_3_var3
 {
     public partial class MainForm: Form
     {
+        private Dictionary<string, List<Films>> film_ = new Dictionary<string, List<Films>>();
         private Dictionary<string, List<Films>> kino_ = new Dictionary<string, List<Films>>();
+        private Dictionary<string, int> orderItems_ = new Dictionary<string, int>();
+        private FileDrugStorage fileDrugStorage = new FileDrugStorage();
         public MainForm()
         {
             InitializeComponent();
@@ -137,7 +140,28 @@ namespace LR_3_var3
 
         private void Button_dobav_Click(object sender, EventArgs e)
         {
+            Films selectedFilms = FilmsComboBox.SelectedItem as Films;
+            if (selectedFilms != null)
+            {
+                string drugName = selectedFilms.Name;
+                int quantity = (int)NumericUpDown.Value;
+                if (orderItems_.ContainsKey(drugName))
+                {
+                    orderItems_[drugName] += quantity;
+                }
+                else
+                {
+                    orderItems_[drugName] = quantity;
+                }
 
+                string orderText = "Ваш заказ:\n";
+                foreach (var item in orderItems_)
+                {
+                    orderText += $"{item.Key}: {item.Value} шт.\n";
+                }
+
+                MessageBox.Show(orderText, "Текущий заказ");
+            }
         }
     }
 }

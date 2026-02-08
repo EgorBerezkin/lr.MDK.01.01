@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LR_3_var3
 {
-    internal class Dobavlenie
+    interface Dobavlenie
     {
+        List<Films> LoadDataFromCsv();
     }
 }
