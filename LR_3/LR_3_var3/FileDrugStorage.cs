@@ -12,7 +12,7 @@ namespace LR_3_var3
         List<Films> Dobavlenie.LoadDataFromCsv()
         { 
             List<Films> result = new List<Films>();
-            using (StreamReader reader = new StreamReader("data.xlsx"))
+            using (StreamReader reader = new StreamReader("data.txt"))
             {
                 string line;
                 while((line = reader.ReadLine()) != null)

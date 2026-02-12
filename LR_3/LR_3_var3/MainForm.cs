@@ -154,10 +154,11 @@ namespace LR_3_var3
                     orderItems_[drugName] = quantity;
                 }
 
-                string orderText = "Ваш заказ:\n";
+                string orderText = "Заказано показов:\n";
                 foreach (var item in orderItems_)
                 {
-                    orderText += $"{item.Key}: {item.Value} шт.\n";
+                    orderText += $"{item.Key}: {item.Value}.\n";
+
                 }
 
                 MessageBox.Show(orderText, "Текущий заказ");

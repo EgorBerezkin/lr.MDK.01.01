@@ -30,9 +30,9 @@
         {
             this.LabelNaimenowanie = new System.Windows.Forms.Label();
             this.Panel = new System.Windows.Forms.Panel();
+            this.NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Button_dobav = new System.Windows.Forms.Button();
             this.RichTextBox = new System.Windows.Forms.RichTextBox();
-            this.OtchetButton = new System.Windows.Forms.Button();
             this.FilmsComboBox = new System.Windows.Forms.ComboBox();
             this.LabelNumber = new System.Windows.Forms.Label();
             this.LabelSum = new System.Windows.Forms.Label();
@@ -41,10 +41,10 @@
             this.LabelOpisanie = new System.Windows.Forms.Label();
             this.FotoPictureBox = new System.Windows.Forms.PictureBox();
             this.FilmsListBox = new System.Windows.Forms.ListBox();
-            this.NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.OtchetButton = new System.Windows.Forms.Button();
             this.Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelNaimenowanie
@@ -73,20 +73,27 @@
             this.Panel.Controls.Add(this.FotoPictureBox);
             this.Panel.Controls.Add(this.LabelNaimenowanie);
             this.Panel.Location = new System.Drawing.Point(179, -2);
-            this.Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Panel.Margin = new System.Windows.Forms.Padding(4);
             this.Panel.Name = "Panel";
             this.Panel.Size = new System.Drawing.Size(923, 492);
             this.Panel.TabIndex = 1;
+            // 
+            // NumericUpDown
+            // 
+            this.NumericUpDown.Location = new System.Drawing.Point(628, 255);
+            this.NumericUpDown.Name = "NumericUpDown";
+            this.NumericUpDown.Size = new System.Drawing.Size(136, 22);
+            this.NumericUpDown.TabIndex = 10;
             // 
             // Button_dobav
             // 
             this.Button_dobav.BackColor = System.Drawing.Color.RosyBrown;
             this.Button_dobav.Location = new System.Drawing.Point(628, 284);
-            this.Button_dobav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_dobav.Margin = new System.Windows.Forms.Padding(4);
             this.Button_dobav.Name = "Button_dobav";
             this.Button_dobav.Size = new System.Drawing.Size(136, 48);
             this.Button_dobav.TabIndex = 9;
-            this.Button_dobav.Text = "Добавить";
+            this.Button_dobav.Text = "Отчёт, по второй части";
             this.Button_dobav.UseVisualStyleBackColor = false;
             this.Button_dobav.Click += new System.EventHandler(this.Button_dobav_Click);
             // 
@@ -94,30 +101,18 @@
             // 
             this.RichTextBox.BackColor = System.Drawing.Color.DarkKhaki;
             this.RichTextBox.Location = new System.Drawing.Point(0, 359);
-            this.RichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RichTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.RichTextBox.Name = "RichTextBox";
             this.RichTextBox.Size = new System.Drawing.Size(921, 132);
             this.RichTextBox.TabIndex = 8;
             this.RichTextBox.Text = "";
-            // 
-            // OtchetButton
-            // 
-            this.OtchetButton.BackColor = System.Drawing.Color.RosyBrown;
-            this.OtchetButton.Location = new System.Drawing.Point(772, 284);
-            this.OtchetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.OtchetButton.Name = "OtchetButton";
-            this.OtchetButton.Size = new System.Drawing.Size(136, 48);
-            this.OtchetButton.TabIndex = 7;
-            this.OtchetButton.Text = "Отчёт";
-            this.OtchetButton.UseVisualStyleBackColor = false;
-            this.OtchetButton.Click += new System.EventHandler(this.OtchetButton_Click);
             // 
             // FilmsComboBox
             // 
             this.FilmsComboBox.BackColor = System.Drawing.Color.DarkGray;
             this.FilmsComboBox.FormattingEnabled = true;
             this.FilmsComboBox.Location = new System.Drawing.Point(369, 21);
-            this.FilmsComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FilmsComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.FilmsComboBox.Name = "FilmsComboBox";
             this.FilmsComboBox.Size = new System.Drawing.Size(261, 24);
             this.FilmsComboBox.TabIndex = 2;
@@ -176,7 +171,7 @@
             // FotoPictureBox
             // 
             this.FotoPictureBox.Location = new System.Drawing.Point(4, 15);
-            this.FotoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FotoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.FotoPictureBox.Name = "FotoPictureBox";
             this.FotoPictureBox.Size = new System.Drawing.Size(211, 278);
             this.FotoPictureBox.TabIndex = 1;
@@ -194,12 +189,17 @@
             this.FilmsListBox.TabIndex = 2;
             this.FilmsListBox.SelectedIndexChanged += new System.EventHandler(this.FilmsListBox_SelectedIndexChanged);
             // 
-            // NumericUpDown
+            // OtchetButton
             // 
-            this.NumericUpDown.Location = new System.Drawing.Point(628, 255);
-            this.NumericUpDown.Name = "NumericUpDown";
-            this.NumericUpDown.Size = new System.Drawing.Size(136, 22);
-            this.NumericUpDown.TabIndex = 10;
+            this.OtchetButton.BackColor = System.Drawing.Color.RosyBrown;
+            this.OtchetButton.Location = new System.Drawing.Point(772, 284);
+            this.OtchetButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OtchetButton.Name = "OtchetButton";
+            this.OtchetButton.Size = new System.Drawing.Size(136, 48);
+            this.OtchetButton.TabIndex = 7;
+            this.OtchetButton.Text = "Отчёт";
+            this.OtchetButton.UseVisualStyleBackColor = false;
+            this.OtchetButton.Click += new System.EventHandler(this.OtchetButton_Click);
             // 
             // MainForm
             // 
@@ -209,14 +209,14 @@
             this.ClientSize = new System.Drawing.Size(1103, 489);
             this.Controls.Add(this.FilmsListBox);
             this.Controls.Add(this.Panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Кинофильмы";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Panel.ResumeLayout(false);
             this.Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,10 +233,10 @@
         private System.Windows.Forms.PictureBox FotoPictureBox;
         private System.Windows.Forms.ComboBox FilmsComboBox;
         private System.Windows.Forms.ListBox FilmsListBox;
-        private System.Windows.Forms.Button OtchetButton;
         private System.Windows.Forms.RichTextBox RichTextBox;
         private System.Windows.Forms.Button Button_dobav;
         private System.Windows.Forms.NumericUpDown NumericUpDown;
+        private System.Windows.Forms.Button OtchetButton;
     }
 }
 
