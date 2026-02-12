@@ -119,7 +119,7 @@ namespace LR_3_var3
 
         private void OtchetButton_Click(object sender, EventArgs e)
         {
-            // RichTextBox.AppendText("Фильмы по жанру "  + FilmsListBox.Text + ": " + FilmsComboBox.Text + ", " + LabelNumber.Text + " \n");
+            
 
             string genre = FilmsListBox.SelectedItem as string;
             // Получаем список фильмов для этого жанра
