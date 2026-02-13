@@ -45,11 +45,10 @@
     <Compile Include="Model-Views\User.cs" />
     <Compile Include="Model\IUsersModel.cs" />
     <Compile Include="Model\MemoryUserModel.cs" />
+    <Compile Include="Presenter\UserPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\IUserView.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenter\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
