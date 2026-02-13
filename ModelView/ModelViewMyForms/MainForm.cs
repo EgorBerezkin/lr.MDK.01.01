@@ -23,5 +23,10 @@ namespace ModelViewMyForms
 
             UserPresenter userPresenter = new UserPresenter(new MemoryUserModel(), usertable);
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

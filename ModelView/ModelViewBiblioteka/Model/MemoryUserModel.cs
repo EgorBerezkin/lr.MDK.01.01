@@ -9,6 +9,7 @@ namespace ModelViewBiblioteka.Model
 {
     public class MemoryUserModel : IUsersModel
     {
+        private List<User> allUsers_ = new List<User>();
         public MemoryUserModel()
         {
             allUsers_.Add(new User("2345", "2221", "Sabrina Carpenter"));
@@ -16,7 +17,6 @@ namespace ModelViewBiblioteka.Model
             allUsers_.Add(new User("3568", "2736", "Charli XCX"));
             allUsers_.Add(new User("2837", "9887", "Adele Castillon"));
         }
-        private List<User> allUsers_ = new List<User>();
         public List<User> Load()
         {
             return allUsers_;
