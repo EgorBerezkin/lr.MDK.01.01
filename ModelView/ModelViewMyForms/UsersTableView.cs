@@ -10,18 +10,27 @@ using System.Windows.Forms;
 
 namespace ModelViewMyForms
 {
-        public class UsersTableView : DataGridView, IUserView
+    public class UsersTableView : DataGridView, IUserView
+    {
+        // Явная реализация интерфейса (то, что предложила VS)
+        void IUserView.ShowUser(List<User> allUsers_)
         {
-            // Явная реализация интерфейса (то, что предложила VS)
-            void IUserView.ShowUser(List<User> allUsers_)
+            DataSource = allUsers_;
+        } 
+        public List<User> GetSelectedUsers()
+        {
+            List<User> result = new List<User>();
+            foreach(var row in SelectedRows)
             {
-                DataSource = allUsers_;
+                result.Add(row as User);
             }
 
-            // Ваш дополнительный метод с другим именем
-            public void ShowUsers(List<User> allUsers_)
-            {
-                ShowUsers(allUsers_); // Вызов метода интерфейса
-            }
+            return result;
         }
+
+        public void ShowUsers(List<User> users)
+        {
+            DataSource = users;
+        }
+    }
 }

@@ -17,11 +17,11 @@ namespace ModelViewBiblioteka.Model
             allUsers_.Add(new User("3568", "2736", "Charli XCX"));
             allUsers_.Add(new User("2837", "9887", "Adele Castillon"));
         }
-        public List<User> Load()
+        public List<User> LoadUser()
         {
             return allUsers_;
         }
-        public bool Register(User user)
+        public bool Registration(User user)
         {
             int count = allUsers_.Count;
             allUsers_.Add(user);
@@ -30,6 +30,13 @@ namespace ModelViewBiblioteka.Model
                 return true;
             }
             return false;
+        }
+        public void Remove(List<User> selectedUsers)
+        {
+            foreach (User u in selectedUsers)
+            {
+                selectedUsers.Remove(u);
+            }
         }
     }
 }

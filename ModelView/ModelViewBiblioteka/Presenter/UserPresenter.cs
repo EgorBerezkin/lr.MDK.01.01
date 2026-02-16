@@ -19,7 +19,7 @@ namespace ModelViewBiblioteka.Presenter
             model_ = model;
             views_ = views;
 
-            List<User> users_ = model.Load();
+            List<User> users_ = model.LoadUser();
             views_.ShowUser(users_);
         }
     }

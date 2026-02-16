@@ -9,7 +9,8 @@ namespace ModelViewBiblioteka.Model
 {
     public interface IUsersModel
     {
-        List<User> Load();
-        bool Register(User user);
+        List<User> LoadUser();
+        bool Registration(User user);
+        void Remove(List<User> selectedUsers);
     }
 }
