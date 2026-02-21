@@ -1,4 +1,6 @@
-﻿using ModelViewBiblioteka.Model;
+﻿using ModelViewBiblioteka;
+using ModelViewBiblioteka.Model;
+using ModelViewBiblioteka.Model_Views;
 using ModelViewBiblioteka.Presenter;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,8 @@ namespace ModelViewMyForms
 {
     public partial class MainForm: Form
     {
+        private UserPresenter presenter_;
+        UsersTableView usertable_;
         public MainForm()
         {
             InitializeComponent();
@@ -21,17 +25,31 @@ namespace ModelViewMyForms
             Controls.Add(usertable);
             usertable.Dock = DockStyle.Top;
 
-            UserPresenter userPresenter = new UserPresenter(new MemoryUserModel(), usertable);
+            UserPresenter presenter_ = new UserPresenter(new MemoryUserModel(), usertable);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ToolStripButtonDelete_Click_1(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Вы точно хотите удалить пользователя?", "Внимание!",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                List<User> selectetUsers = usertable_.GetSelectedUsers();
+                presenter_.RemoveUsers(selectetUsers);
+            }
+        }
 
+        private void ToolStripButtonAdd_Click_1(object sender, EventArgs e)
+        {
+            AddUserForm addUserForm = new AddUserForm();
+            if(addUserForm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("...");
+            }
+            addUserForm.Dispose();
         }
     }
 }

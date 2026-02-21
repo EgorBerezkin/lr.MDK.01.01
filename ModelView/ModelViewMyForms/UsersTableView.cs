@@ -12,7 +12,7 @@ namespace ModelViewMyForms
 {
     public class UsersTableView : DataGridView, IUserView
     {
-        // Явная реализация интерфейса (то, что предложила VS)
+        
         void IUserView.ShowUser(List<User> allUsers_)
         {
             DataSource = allUsers_;
@@ -31,6 +31,8 @@ namespace ModelViewMyForms
         public void ShowUsers(List<User> users)
         {
             DataSource = users;
+            DataSource = null;
+
         }
     }
 }

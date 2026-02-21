@@ -22,5 +22,15 @@ namespace ModelViewBiblioteka.Presenter
             List<User> users_ = model.LoadUser();
             views_.ShowUser(users_);
         }
+        public void RemoveUsers(List<User> users)
+        {
+            model_.RemoveUsers(users);
+            views_.ShowUser(model_.LoadUser());
+        }
+        public void Add(User u)
+        {
+            model_.AddUsers(u);
+            views_.ShowUser(model_.LoadUser());
+        }
     }
 }

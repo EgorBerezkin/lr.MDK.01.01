@@ -11,6 +11,7 @@ namespace ModelViewBiblioteka.Model
     {
         List<User> LoadUser();
         bool Registration(User user);
-        void Remove(List<User> selectedUsers);
+        void RemoveUsers(List<User> selectedUsers);
+        bool AddUsers(User u);
     }
 }

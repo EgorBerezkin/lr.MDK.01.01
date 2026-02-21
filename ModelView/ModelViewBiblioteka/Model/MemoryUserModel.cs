@@ -21,7 +21,7 @@ namespace ModelViewBiblioteka.Model
         {
             return allUsers_;
         }
-        public bool Registration(User user)
+        public bool Register(User user)
         {
             int count = allUsers_.Count;
             allUsers_.Add(user);
@@ -31,12 +31,27 @@ namespace ModelViewBiblioteka.Model
             }
             return false;
         }
-        public void Remove(List<User> selectedUsers)
+
+        public bool Registration(User user)
         {
-            foreach (User u in selectedUsers)
+            throw new NotImplementedException();
+        }
+
+        public void RemoveUsers(List<User> users)
+        {
+            foreach (User user in users)
             {
-                selectedUsers.Remove(u);
+                int targeIndex = allUsers_.FindIndex(local => local.Login == user.Login);
+                if (targeIndex >= 0)
+                {
+                    allUsers_.RemoveAt(targeIndex);
+                }
             }
+        }
+        public bool AddUsers(User u)
+        {
+            allUsers_.Add(u);
+            return true;
         }
     }
 }
