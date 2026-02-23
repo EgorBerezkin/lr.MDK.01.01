@@ -37,12 +37,13 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripButtonAdd,
             this.ToolStripButtonDelete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(592, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(679, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -52,7 +53,7 @@
             this.ToolStripButtonAdd.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonAdd.Image")));
             this.ToolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripButtonAdd.Name = "ToolStripButtonAdd";
-            this.ToolStripButtonAdd.Size = new System.Drawing.Size(23, 22);
+            this.ToolStripButtonAdd.Size = new System.Drawing.Size(29, 24);
             this.ToolStripButtonAdd.Text = "ToolStripButtonAdd";
             this.ToolStripButtonAdd.Click += new System.EventHandler(this.ToolStripButtonAdd_Click_1);
             // 
@@ -62,16 +63,17 @@
             this.ToolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButtonDelete.Image")));
             this.ToolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripButtonDelete.Name = "ToolStripButtonDelete";
-            this.ToolStripButtonDelete.Size = new System.Drawing.Size(23, 22);
+            this.ToolStripButtonDelete.Size = new System.Drawing.Size(29, 24);
             this.ToolStripButtonDelete.Text = "ToolStripButtonDelete";
             this.ToolStripButtonDelete.Click += new System.EventHandler(this.ToolStripButtonDelete_Click_1);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 201);
+            this.ClientSize = new System.Drawing.Size(679, 365);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Добавление и удаление";
             this.Load += new System.EventHandler(this.MainForm_Load);

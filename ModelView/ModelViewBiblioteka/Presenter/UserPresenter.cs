@@ -19,18 +19,35 @@ namespace ModelViewBiblioteka.Presenter
             model_ = model;
             views_ = views;
 
-            List<User> users_ = model.LoadUser();
-            views_.ShowUser(users_);
+            // Загружаем пользователей при создании
+            RefreshUsers();
         }
+
+        private void RefreshUsers()
+        {
+            List<User> users = model_.LoadUser();
+            views_.ShowUser(users);
+        }
+
         public void RemoveUsers(List<User> users)
         {
-            model_.RemoveUsers(users);
-            views_.ShowUser(model_.LoadUser());
+            if (users != null && users.Count > 0)
+            {
+                model_.RemoveUsers(users);
+                RefreshUsers(); // Обновляем отображение после удаления
+            }
         }
-        public void Add(User u)
+
+        public void Add(User user)
         {
-            model_.AddUsers(u);
-            views_.ShowUser(model_.LoadUser());
+            if (user != null)
+            {
+                bool added = model_.AddUsers(user);
+                if (added)
+                {
+                    RefreshUsers(); // Обновляем отображение после добавления
+                }
+            }
         }
     }
 }

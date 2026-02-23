@@ -21,17 +21,12 @@ namespace ModelViewMyForms
         public MainForm()
         {
             InitializeComponent();
-            UsersTableView usertable = new UsersTableView();
-            Controls.Add(usertable);
-            usertable.Dock = DockStyle.Top;
-
-            UserPresenter presenter_ = new UserPresenter(new MemoryUserModel(), usertable);
+            usertable_ = new UsersTableView();
+            Controls.Add(usertable_);
+            usertable_.Dock = DockStyle.Top;
+            presenter_ = new UserPresenter(new MemoryUserModel(), usertable_);
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
         private void ToolStripButtonDelete_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Вы точно хотите удалить пользователя?", "Внимание!",
@@ -45,11 +40,29 @@ namespace ModelViewMyForms
         private void ToolStripButtonAdd_Click_1(object sender, EventArgs e)
         {
             AddUserForm addUserForm = new AddUserForm();
-            if(addUserForm.ShowDialog() == DialogResult.OK)
+
+            // Показываем форму как диалог
+            if (addUserForm.ShowDialog() == DialogResult.Yes) // Используем DialogResult.Yes, как в вашей форме
             {
-                MessageBox.Show("...");
+                // Получаем созданного пользователя через свойство users
+                User newUser = addUserForm.users;
+
+                if (newUser != null)
+                {
+                    // Добавляем пользователя через presenter
+                    presenter_.Add(newUser);
+
+                    MessageBox.Show($"Пользователь {newUser.Name} успешно добавлен!",
+                        "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
             addUserForm.Dispose();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
