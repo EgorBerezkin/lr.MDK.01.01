@@ -18,15 +18,15 @@ namespace ChartTest.Views
             {
                 Title = "Продажи",
 
-                Stroke = new SolidColorBrush(Colors.Blue),
+                Stroke = new SolidColorBrush(Colors.DarkGreen),
                 StrokeThickness = 2,
 
                 PointGeometry = DefaultGeometries.Circle,
                 PointGeometrySize = 7,
 
                 Fill = new LinearGradientBrush(
-                        System.Windows.Media.Color.FromArgb(90, 33, 150, 243),
-                        System.Windows.Media.Color.FromArgb(0, 33, 150, 243),
+                        System.Windows.Media.Color.FromArgb(90, 145, 223, 124),
+                        System.Windows.Media.Color.FromArgb(50, 223, 166, 124),
                         90)
             };          
 
@@ -38,13 +38,13 @@ namespace ChartTest.Views
 
                 Separator = new Separator
                 {
-                    Stroke = new SolidColorBrush(Color.FromArgb(40, 0, 0, 0)),
-                    StrokeThickness = 1
+                    IsEnabled = false,
                 },
 
                 MinValue = 0
             }
             );
+
 
             /// Ось X
             AxisX.Add(new Axis

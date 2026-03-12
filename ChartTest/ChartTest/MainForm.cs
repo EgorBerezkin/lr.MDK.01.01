@@ -1,4 +1,6 @@
 ﻿using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 using SalesLibrary;
 using SalesLibrary.Analysis;
@@ -6,6 +8,7 @@ using SalesLibrary.Presenters;
 using SalesLibrary.Views;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 
@@ -23,38 +26,42 @@ namespace ChartTest
                 presenter_.ShowSalesByItem(((Item)ItemsList.Items[0]).Name);
             }
         }
-
-        void FillAngular()
-        {
-            angular.FromValue = 0;
-            angular.ToValue = 100;
-
-            angular.TicksForeground = Brushes.Red;
-            angular.NeedleFill = Brushes.DarkRed;
-        }
-
-        void FillSolid()
-        {
-            solid.From = 0;
-            solid.To = 100;
-            solid.LabelFormatter = value => value + "%";
-        }
         public MainForm()
         {
             InitializeComponent();
 
             presenter_ = new SalesPresenter(new List<ISalesView> { cartesian });
-            PieChart.SetPresenter(presenter_);
-            PieChart.UpdateView();
 
             FillCartesianChart();
-
             FillAngular();
-
             FillSolid();
+            FillPie();
+            pie.SetPresenter(presenter_);
+            pie.UpdateView();
+        }
+        void FillAngular()
+        {
+            angular.FromValue = 0;
+            angular.ToValue = 100;
+            angular.TickStep = 2;
+            angular.TicksForeground = Brushes.Black;
+            angular.NeedleFill = Brushes.DarkGreen;
 
+            angular.LabelsEffect = null;
+        }
+        void FillSolid()
+        {
+            solid.From = 0;
+            solid.To = 100;
+            solid.LabelFormatter = value => value + "%";
+            solid.FromColor = Colors.DarkGreen;
+            solid.ToColor = Colors.DarkGreen;
         }
 
+        void FillPie()
+        {
+            
+        }
         private void ItemsList_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             Item selectedItem = ((Item)(ItemsList.SelectedItem));
@@ -65,18 +72,11 @@ namespace ChartTest
 
             presenter_.ShowSalesByItem(selectedItem.Name);
             double percent = Math.Round(
-                presenter_.GetProfitPercentByItem(selectedItem), 2);
-
+            presenter_.GetProfitPercentByItem(selectedItem), 2);
             angular.Value = percent;
             solid.Value = percent;
         }
 
-        void FillPieChart()
-        {
-
-
-            PieChart.LegendLocation = LegendLocation.Right;
-        }
-
+        
     }
 }

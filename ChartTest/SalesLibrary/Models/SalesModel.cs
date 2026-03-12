@@ -41,27 +41,26 @@ namespace SalesLibrary.Models
 
         public bool Load()
         {
-            AddSales(new Item { Name = "Конфетки Заоблачные", Price = 100 },
+            AddSales(new Item { Name = "Синабончик", Price = 100 },
                 new List<Sale>() { 
-                    new Sale {Time = new System.DateTime(2026, 2, 1), Count = 10 } ,
-                    new Sale {Time = new System.DateTime(2026, 2, 2), Count = 20 },
-                    new Sale {Time = new System.DateTime(2026, 2, 3), Count = 30 },
-                    new Sale {Time = new System.DateTime(2026, 2, 4), Count = 40 },
-                    new Sale {Time = new System.DateTime(2026, 2, 5), Count = 50 },
-                    new Sale {Time = new System.DateTime(2026, 2, 6), Count = 60 },
-                    new Sale {Time = new System.DateTime(2026, 2, 7), Count = 70 },
-                    new Sale {Time = new System.DateTime(2026, 2, 8), Count = 55 },
-                    new Sale {Time = new System.DateTime(2026, 2, 9), Count = 35 },
-                    new Sale {Time = new System.DateTime(2026, 2, 10), Count = 1 },
+                    new Sale {Time = new System.DateTime(2026, 2, 1), Count = 15 } ,
+                    new Sale {Time = new System.DateTime(2026, 2, 2), Count = 35 },
+                    new Sale {Time = new System.DateTime(2026, 2, 3), Count = 20 },
+                    new Sale {Time = new System.DateTime(2026, 2, 4), Count = 10 },
+                    new Sale {Time = new System.DateTime(2026, 2, 5), Count = 40 },
+                    new Sale {Time = new System.DateTime(2026, 2, 6), Count = 50 },
+                    new Sale {Time = new System.DateTime(2026, 2, 7), Count = 20 },
                 });
 
-            AddSales(new Item { Name = "Зефирка Воздушная", Price = 200 },
+            AddSales(new Item { Name = "Круассан", Price = 200 },
                 new List<Sale>() {
-                    new Sale {Time = new System.DateTime(2026, 2, 1), Count = 15 } ,
+                    new Sale {Time = new System.DateTime(2026, 2, 1), Count = 10 } ,
                     new Sale {Time = new System.DateTime(2026, 2, 2), Count = 25 },
-                    new Sale {Time = new System.DateTime(2026, 2, 3), Count = 31 },
-                    new Sale {Time = new System.DateTime(2026, 2, 10), Count = 2 },
-                    new Sale {Time = new System.DateTime(2026, 3, 1), Count = 35 },
+                    new Sale {Time = new System.DateTime(2026, 2, 3), Count = 60 },
+                    new Sale {Time = new System.DateTime(2026, 2, 4), Count = 15 },
+                    new Sale {Time = new System.DateTime(2026, 2, 5), Count = 55 },
+                    new Sale {Time = new System.DateTime(2026, 2, 6), Count = 35 },
+                    new Sale {Time = new System.DateTime(2026, 2, 7), Count = 70 },
                });
 
             return true;
