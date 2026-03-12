@@ -31,6 +31,7 @@ namespace ChartTest
             InitializeComponent();
 
             presenter_ = new SalesPresenter(new List<ISalesView> { cartesian });
+            // Передача списка представлений в презентер
 
             FillCartesianChart();
             FillAngular();
@@ -65,6 +66,7 @@ namespace ChartTest
         private void ItemsList_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             Item selectedItem = ((Item)(ItemsList.SelectedItem));
+            // выбираем товар и получаем информацию о нем
             if(selectedItem == null)
             {
                 return;
@@ -77,6 +79,9 @@ namespace ChartTest
             solid.Value = percent;
         }
 
-        
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

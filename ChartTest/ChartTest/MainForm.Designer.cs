@@ -201,6 +201,7 @@ namespace ChartTest
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "LiveCharts-диаграммы";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.RightPanel.ResumeLayout(false);

@@ -1,12 +1,13 @@
-﻿using LiveCharts;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media;
+using LiveCharts;
 using LiveCharts.Wpf;
 using SalesLibrary;
 using SalesLibrary.Analysis;
 using SalesLibrary.Models;
 using SalesLibrary.Presenters;
 using SalesLibrary.Views;
-using System;
-using System.Collections.Generic;
 
 namespace ChartTest.Views
 {
@@ -22,6 +23,7 @@ namespace ChartTest.Views
         {            
             List<Item> allItems = presenter_.GetAllItems();;
             SeriesCollection seriesData = new SeriesCollection();
+            // создание коллекции серий
             foreach (Item i in allItems)
             {
                 seriesData.Add(new PieSeries
@@ -29,11 +31,13 @@ namespace ChartTest.Views
                     Title = i.Name,
                     Values = new ChartValues<double> { presenter_.GetProfitPercentByItem(i) },
                     DataLabels = true,
-                    //Fill = System.Windows.Media.Brushes.BlueViolet
+                    Fill = System.Windows.Media.Brushes.DarkGreen,
+                    
+                    
                 });
             }
             Series = seriesData;
-            //LegendLocation = LegendLocation.Left;
+            
         }
     }
 }
