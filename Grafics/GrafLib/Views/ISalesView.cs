@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrafLib
+namespace GrafLib.Views
 {
-    public class Class1
+    public interface ISalesView
     {
+        void Show(List<Sale> sales);
     }
 }
