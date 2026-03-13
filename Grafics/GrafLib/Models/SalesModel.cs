@@ -73,14 +73,14 @@ namespace GrafLib.Models
             return result;
         }
 
-        public Inventar GetInventar(string itemName)
+        public Inventar GetInventar(string inventarName)
         {
             foreach (KeyValuePair<Inventar, List<Sale>> keyValue in salesByInventar_)
             {
-                Inventar item = keyValue.Key;
-                if (item.Name == itemName)
+                Inventar inventar = keyValue.Key;
+                if (inventar.Name == inventarName)
                 {
-                    return item;
+                    return inventar;
                 }
             }
 

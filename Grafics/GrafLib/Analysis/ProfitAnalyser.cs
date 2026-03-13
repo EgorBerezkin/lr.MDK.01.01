@@ -13,13 +13,13 @@ namespace GrafLib.Analysis
         public static double CalculateProfitPercentByInventar(string inventarName, SalesModel model)
         {
             /// 1. Получить выручку товара (услуги, ....) itemName
-            List<Sale> itemSales = model.LoadSalesForInventar(inventarName);
-            Inventar targetItem = model.GetInventar(inventarName);
-            if (targetItem == null)
+            List<Sale> inventarSales = model.LoadSalesForInventar(inventarName);
+            Inventar targetInventar = model.GetInventar(inventarName);
+            if (targetInventar == null)
             {
                 return 0.0;
             }
-            double itemTotal = itemSales.Sum(sale => sale.Count * targetItem.Price);
+            double inventarTotal = inventarSales.Sum(sale => sale.Count * targetInventar.Price);
 
             /// 2. Получить общую выручку
             double total = model.GetTotalProfit();
@@ -28,7 +28,7 @@ namespace GrafLib.Analysis
                 return 0.0;
             }
 
-            return itemTotal / total * 100.0;
+            return inventarTotal / total * 100.0;
         }
     }
 }

@@ -30,7 +30,9 @@ namespace Grafics
             ListBox.DisplayMember = "Name";
             if (ListBox.Items.Count > 0)
             {
-                presenter_.ShowSalesByInventar(((Inventar)ListBox.).Name);
+                ListBox.SelectedIndex = 0;
+                var selectedInventar = (Inventar)ListBox.SelectedItem;
+                presenter_.ShowSalesByInventar(selectedInventar.Name);
             }
         }
         public MainForm()
@@ -52,7 +54,8 @@ namespace Grafics
         {
 
         }
-        private void InventarList_SelectedIndexChanged(object sender, System.EventArgs e)
+        
+        private void ListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Inventar selectedInventar = ((Inventar)(ListBox.SelectedItem));
             // выбираем товар и получаем информацию о нем
@@ -64,8 +67,6 @@ namespace Grafics
             presenter_.ShowSalesByInventar(selectedInventar.Name);
             double percent = Math.Round(
             presenter_.GetProfitPercentByInventar(selectedInventar), 2);
-            
         }
-
     }
 }
