@@ -32,7 +32,7 @@ namespace Grafics
         {
             this.ListBox = new System.Windows.Forms.ListBox();
             this.PieChart = new LiveCharts.WinForms.PieChart();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.cartesian = new Grafics.Views.SalesCartesianChart();
             this.SuspendLayout();
             // 
             // ListBox
@@ -40,7 +40,7 @@ namespace Grafics
             this.ListBox.FormattingEnabled = true;
             this.ListBox.ItemHeight = 16;
             this.ListBox.Location = new System.Drawing.Point(-3, 0);
-            this.ListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListBox.Margin = new System.Windows.Forms.Padding(4);
             this.ListBox.Name = "ListBox";
             this.ListBox.Size = new System.Drawing.Size(159, 404);
             this.ListBox.TabIndex = 1;
@@ -49,29 +49,29 @@ namespace Grafics
             // PieChart
             // 
             this.PieChart.Location = new System.Drawing.Point(1021, 4);
-            this.PieChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PieChart.Margin = new System.Windows.Forms.Padding(4);
             this.PieChart.Name = "PieChart";
             this.PieChart.Size = new System.Drawing.Size(267, 123);
             this.PieChart.TabIndex = 3;
             this.PieChart.Text = "PieChart";
             // 
-            // cartesianChart1
+            // cartesian
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(163, 0);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(905, 383);
-            this.cartesianChart1.TabIndex = 4;
-            this.cartesianChart1.Text = "cartesianChart1";
+            this.cartesian.Location = new System.Drawing.Point(163, 0);
+            this.cartesian.Name = "cartesian";
+            this.cartesian.Size = new System.Drawing.Size(905, 383);
+            this.cartesian.TabIndex = 4;
+            this.cartesian.Text = "cartesian";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1296, 395);
-            this.Controls.Add(this.cartesianChart1);
+            this.Controls.Add(this.cartesian);
             this.Controls.Add(this.PieChart);
             this.Controls.Add(this.ListBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);
@@ -82,7 +82,6 @@ namespace Grafics
         private System.Windows.Forms.ListBox ListBox;
         private SalesCartesianChart cartesian;
         private LiveCharts.WinForms.PieChart PieChart;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }
 
