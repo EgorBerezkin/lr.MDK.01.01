@@ -23,8 +23,8 @@ namespace Database
             //var con = new NpgsqlConnection(cs);
             //con.Open();
 
-            ///// var sql = "SELECT version()";
-            ///// var cmd = new NpgsqlCommand(sql, con);
+            // var sql = "SELECT version()";
+            // var cmd = new NpgsqlCommand(sql, con);
 
             //string sql = "SELECT login FROM students";
             //var cmd = new NpgsqlCommand(sql, con);
@@ -39,8 +39,13 @@ namespace Database
             //    logins.Add(login + ":" + password);
             //}
             //MessageBox.Show($"{logins}");
-            ///// var version = cmd.ExecuteScalar().ToString();
-            ///// MessageBox.Show($"PostgresSQL: {version}");
+            // var version = cmd.ExecuteScalar().ToString();
+            // MessageBox.Show($"PostgresSQL: {version}");
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

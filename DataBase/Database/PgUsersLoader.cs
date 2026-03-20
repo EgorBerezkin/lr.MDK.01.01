@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,22 @@ namespace Database
 
             }
             con.Close();
+
+            var sql_delete = "DELETE FROM students WHERE login = @login";
+
+            try
+            {
+                var dataSourse = NpgsqlDataSource.Create(sql_delete);
+                var cmd_delete = dataSourse.CreateCommand(sql_delete);
+                cmd_delete.Parameters.AddWithValue("@login", 1);
+                cmd_delete.ExecuteNonQueryAsync();
+                Console.WriteLine("");
+            }
+            catch (NpgsqlException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
 
 
             return allUsers;

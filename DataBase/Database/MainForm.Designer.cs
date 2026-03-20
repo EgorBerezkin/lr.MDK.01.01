@@ -51,6 +51,7 @@
             this.DeleteButton.TabIndex = 1;
             this.DeleteButton.Text = "Удаление";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // DataGridView
             // 
