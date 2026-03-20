@@ -13,32 +13,34 @@ namespace Database
 {
     public partial class MainForm: Form
     {
+        PgUsersLoader loader = new PgUsersLoader();
         public MainForm()
         {
             InitializeComponent();
+            DataGridView.DataSource = loader.LoadUsers();
 
-            var cs = "Host=192.168.1.48;Username=st50-2;Password=502;Database=Users_Students";
-            var con = new NpgsqlConnection(cs);
-            con.Open();
+            //var cs = "Host=192.168.1.48;Username=st50-2;Password=502;Database=Users_Students";
+            //var con = new NpgsqlConnection(cs);
+            //con.Open();
 
-            /// var sql = "SELECT version()";
-            /// var cmd = new NpgsqlCommand(sql, con);
+            ///// var sql = "SELECT version()";
+            ///// var cmd = new NpgsqlCommand(sql, con);
 
-            string sql = "SELECT login FROM students";
-            var cmd = new NpgsqlCommand(sql, con);
-            var reader = cmd.ExecuteReader();
+            //string sql = "SELECT login FROM students";
+            //var cmd = new NpgsqlCommand(sql, con);
+            //var reader = cmd.ExecuteReader();
 
-            List<string> logins = new List<string>();
-            while(reader.Read())
-            {
+            //List<string> logins = new List<string>();
+            //while(reader.Read())
+            //{
                 
-                string login = reader.GetString(0);
-                string password = reader.GetString(0);
-                logins.Add(login + ":" + password);
-            }
-            MessageBox.Show($"{logins}");
-            /// var version = cmd.ExecuteScalar().ToString();
-            /// MessageBox.Show($"PostgresSQL: {version}");
+            //    string login = reader.GetString(0);
+            //    string password = reader.GetString(0);
+            //    logins.Add(login + ":" + password);
+            //}
+            //MessageBox.Show($"{logins}");
+            ///// var version = cmd.ExecuteScalar().ToString();
+            ///// MessageBox.Show($"PostgresSQL: {version}");
         }
     }
 }
