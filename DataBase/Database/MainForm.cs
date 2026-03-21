@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,35 +18,26 @@ namespace Database
         public MainForm()
         {
             InitializeComponent();
-            DataGridView.DataSource = loader.LoadUsers();
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            //var cs = "Host=192.168.1.48;Username=st50-2;Password=502;Database=Users_Students";
-            //var con = new NpgsqlConnection(cs);
-            //con.Open();
-
-            // var sql = "SELECT version()";
-            // var cmd = new NpgsqlCommand(sql, con);
-
-            //string sql = "SELECT login FROM students";
-            //var cmd = new NpgsqlCommand(sql, con);
-            //var reader = cmd.ExecuteReader();
-
-            //List<string> logins = new List<string>();
-            //while(reader.Read())
-            //{
-                
-            //    string login = reader.GetString(0);
-            //    string password = reader.GetString(0);
-            //    logins.Add(login + ":" + password);
-            //}
-            //MessageBox.Show($"{logins}");
-            // var version = cmd.ExecuteScalar().ToString();
-            // MessageBox.Show($"PostgresSQL: {version}");
+            BindingList<User> user = loader.Load();
+            dataGridView.DataSource = user;
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
-            
+            DataGridViewRow row = dataGridView.SelectedRows[0];
+            User user = row.DataBoundItem as User;
+            loader.DeleteSelectedUser(user.Login);
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Вы уверены, что вам нужно удалить всех пользователей?", "Внимание!!!", MessageBoxButtons.OKCancel);
+            if (r == DialogResult.OK)
+            {
+                loader.ClearUsers();
+            }
         }
     }
 }
