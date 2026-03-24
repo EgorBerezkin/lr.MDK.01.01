@@ -22,6 +22,7 @@ namespace Database
 
             BindingList<User> user = loader.Load();
             dataGridView.DataSource = user;
+            
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -38,6 +39,23 @@ namespace Database
             {
                 loader.ClearUsers();
             }
+        }
+
+        private void DobavlenieButton_Click(object sender, EventArgs e)
+        {
+            AddForm addForm = new AddForm();
+            if (addForm.ShowDialog() == DialogResult.Yes)
+            {
+                User newUser = addForm.users;
+                if (newUser != null)
+                {
+                    loader.AddUser(newUser);
+                    MessageBox.Show($" Пользователь {newUser.Name} успешно добавлен!",
+                        "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            addForm.Dispose();
         }
     }
 }

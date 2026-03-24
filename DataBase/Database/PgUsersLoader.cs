@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 
 namespace Database
 {
@@ -91,11 +93,11 @@ namespace Database
             allUser.Clear();
             return User;
         }
-        public bool AddUser()
+        public bool AddUser(User u)
         {
             bool allUser = false;
             var con = new NpgsqlConnection(connectSetting);
-            var sql = "INSERT INTO students (login,password,lastname,name,phone,email) VALUES (login,password,lastname,name,phone,email)";
+            var sql = "INSERT INTO students (login,password,lastname,name,phone,email) VALUES (@login,@password,@lastname,@name,@phone,@email)";
             con.Open();
             var cmd = new NpgsqlCommand(sql, con);
             int execute = cmd.ExecuteNonQuery();

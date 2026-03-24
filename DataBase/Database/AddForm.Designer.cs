@@ -149,6 +149,7 @@
             this.SozdatButton.TabIndex = 12;
             this.SozdatButton.Text = "Создать";
             this.SozdatButton.UseVisualStyleBackColor = false;
+            this.SozdatButton.Click += new System.EventHandler(this.SozdatButton_Click);
             // 
             // OtmenaButton
             // 

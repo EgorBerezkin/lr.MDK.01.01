@@ -44,6 +44,7 @@
             this.DobavlenieButton.TabIndex = 0;
             this.DobavlenieButton.Text = "Добавление";
             this.DobavlenieButton.UseVisualStyleBackColor = false;
+            this.DobavlenieButton.Click += new System.EventHandler(this.DobavlenieButton_Click);
             // 
             // deleteButton
             // 
