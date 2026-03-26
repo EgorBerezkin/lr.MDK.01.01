@@ -12,35 +12,32 @@ namespace Database
 {
     public partial class AddForm: Form
     {
-        private User users_;
-        public User users
-        {
-            get { return users_; }
-        }
+        PgUsersLoader loader_;
 
-        public AddForm()
+        public AddForm(PgUsersLoader loader)
         {
             InitializeComponent();
+            loader_ = loader;
         }
 
         private void SozdatButton_Click(object sender, EventArgs e)
         {
-            if (textBoxLogin.Text.Trim() != "" &&
-                textBoxPassword.Text.Trim() != "" &&
-                textBoxLastname.Text.Trim() != "" &&
-                textBoxName.Text.Trim() != "" &&
-                textBoxTelefon.Text.Trim() != "" &&
-                textBoxEmail.Text.Trim() != "")
+            User user = new User
             {
-                DialogResult = DialogResult.Yes;
-                users_ = new User(textBoxLogin.Text, textBoxPassword.Text, textBoxLastname.Text, textBoxName.Text, textBoxTelefon.Text, textBoxEmail.Text);
-            }
-            else
-            {
-                MessageBox.Show("Введите корректные данные !!!");
-                DialogResult = DialogResult.No;
-            }
-            Close();
+                Login = textBoxLogin.Text,
+                Password = textBoxPassword.Text,
+                Last_Name = textBoxLastname.Text,
+                Name = textBoxName.Text,
+                Phone = textBoxTelefon.Text,
+                Email = textBoxEmail.Text,
+            };
+            loader_.AddUser(user);
+            this.Close();
+        }
+
+        private void AddForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

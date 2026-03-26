@@ -14,7 +14,7 @@ namespace Database
 {
     public partial class MainForm: Form
     {
-        PgUsersLoader loader = new PgUsersLoader();
+        public PgUsersLoader loader = new PgUsersLoader();
         public MainForm()
         {
             InitializeComponent();
@@ -43,19 +43,8 @@ namespace Database
 
         private void DobavlenieButton_Click(object sender, EventArgs e)
         {
-            AddForm addForm = new AddForm();
-            if (addForm.ShowDialog() == DialogResult.Yes)
-            {
-                User newUser = addForm.users;
-                if (newUser != null)
-                {
-                    loader.AddUser(newUser);
-                    MessageBox.Show($" Пользователь {newUser.Name} успешно добавлен!",
-                        "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-            }
-            addForm.Dispose();
+            AddForm addForm = new AddForm(loader);
+            addForm.Show();
         }
     }
 }

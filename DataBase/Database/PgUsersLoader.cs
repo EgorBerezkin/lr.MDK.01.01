@@ -93,19 +93,34 @@ namespace Database
             allUser.Clear();
             return User;
         }
-        public bool AddUser(User u)
+        public bool AddUser(User user)
         {
-            bool allUser = false;
-            var con = new NpgsqlConnection(connectSetting);
-            var sql = "INSERT INTO students (login,password,lastname,name,phone,email) VALUES (@login,@password,@lastname,@name,@phone,@email)";
-            con.Open();
-            var cmd = new NpgsqlCommand(sql, con);
-            int execute = cmd.ExecuteNonQuery();
-            if (execute > 0)
+            try
             {
-                allUser = true;
+                bool allUsers = false;
+                var con = new NpgsqlConnection(connectSetting);
+                con.Open();
+                var sql = "INSERT INTO students(login,password,lastname,name,phone,email) VALUES(@login,@password,@lastname,@name,@phone,@email)";
+                var cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@login", user.Login);
+                cmd.Parameters.AddWithValue("@password", user.Password);
+                cmd.Parameters.AddWithValue("@lastname", user.Last_Name);
+                cmd.Parameters.AddWithValue("@name", user.Name);
+                cmd.Parameters.AddWithValue("@phone", user.Phone);
+                cmd.Parameters.AddWithValue("@email", user.Email);
+                int execute = cmd.ExecuteNonQuery();
+                if (execute > 0)
+                {
+                    allUsers = true;
+                    allUser.Add(user);
+                }
+                return allUsers;
             }
-            return allUser;
+            catch (NpgsqlException exception)
+            {
+                MessageBox.Show($"Ошибка: {exception.Message}");
+                return false;
+            }
         }
     }
 }
