@@ -26,7 +26,7 @@ namespace Database
             {
                 Login = textBoxLogin.Text,
                 Password = textBoxPassword.Text,
-                Last_Name = textBoxLastname.Text,
+                LastName = textBoxLastname.Text,
                 Name = textBoxName.Text,
                 Phone = textBoxTelefon.Text,
                 Email = textBoxEmail.Text,
@@ -37,6 +37,26 @@ namespace Database
 
         private void AddForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void OtmenaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonEdited_Click(object sender, EventArgs e)
+        {
+            User user = new User
+            {
+                Password = textBoxPassword.Text,
+                LastName = textBoxLastname.Text,
+                Name = textBoxName.Text,
+                Phone = textBoxTelefon.Text,
+                Email = textBoxEmail.Text,
+            };
+            loader_.EditUser(user);
+            this.Close();
 
         }
     }

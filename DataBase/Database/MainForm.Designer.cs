@@ -32,6 +32,7 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,9 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.BackgroundColor = System.Drawing.Color.NavajoWhite;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.GridColor = System.Drawing.Color.Gray;
             this.dataGridView.Location = new System.Drawing.Point(0, 1);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(672, 150);
@@ -76,17 +79,31 @@
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
+            // buttonEdit
+            // 
+            this.buttonEdit.BackColor = System.Drawing.Color.Orange;
+            this.buttonEdit.Location = new System.Drawing.Point(293, 157);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(105, 23);
+            this.buttonEdit.TabIndex = 4;
+            this.buttonEdit.Text = "Редактирование";
+            this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 186);
+            this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.ClientSize = new System.Drawing.Size(668, 192);
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.DobavlenieButton);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Информация по базе данных";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -98,6 +115,7 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Button buttonEdit;
     }
 }
 

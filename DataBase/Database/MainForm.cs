@@ -46,5 +46,16 @@ namespace Database
             AddForm addForm = new AddForm(loader);
             addForm.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            AddForm addForm = new AddForm(loader);
+            addForm.Show();
+        }
     }
 }

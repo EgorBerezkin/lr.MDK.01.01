@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
+using System.CodeDom.Compiler;
 
 namespace Database
 {
@@ -32,7 +33,7 @@ namespace Database
                     {
                         Login = reader.GetString(0),
                         Password = reader.GetString(1),
-                        Last_Name = reader.GetString(2),
+                        LastName = reader.GetString(2),
                         Name = reader.GetString(3),
                         Phone = reader.GetString(4),
                         Email = reader.GetString(5)
@@ -104,7 +105,7 @@ namespace Database
                 var cmd = new NpgsqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@login", user.Login);
                 cmd.Parameters.AddWithValue("@password", user.Password);
-                cmd.Parameters.AddWithValue("@lastname", user.Last_Name);
+                cmd.Parameters.AddWithValue("@lastname", user.LastName);
                 cmd.Parameters.AddWithValue("@name", user.Name);
                 cmd.Parameters.AddWithValue("@phone", user.Phone);
                 cmd.Parameters.AddWithValue("@email", user.Email);
@@ -113,6 +114,30 @@ namespace Database
                 {
                     allUsers = true;
                     allUser.Add(user);
+                }
+                return allUsers;
+            }
+            catch (NpgsqlException exception)
+            {
+                MessageBox.Show($"Ошибка: {exception.Message}");
+                return false;
+            }
+        }
+
+        public bool EditUser(User user)
+        {
+            try
+            {
+                bool allUsers = false;
+                var con = new NpgsqlConnection(connectSetting);
+                con.Open();
+                var sql = "UPDATE students SET password,lastname,name,phone,email WHERE @login,@password,@lastname,@name,@phone,@email";
+                var cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@login", user.Login);
+                int execute = cmd.ExecuteNonQuery();
+                if (execute > 0)
+                {
+                    allUsers = true;
                 }
                 return allUsers;
             }
