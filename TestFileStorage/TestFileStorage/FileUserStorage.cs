@@ -20,7 +20,7 @@ namespace TestFileStorage
             while ((line = info.ReadLine()) != null)
             {
                 string[] lines = line.Split('-');
-                AllUser.Add(new User (lines[0], lines[1]));
+                AllUser.Add(new User(lines[0], lines[1]));
 
             }
             
